@@ -1,990 +1,46 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بصمة - خدمات التأشيرات</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بصمة - خدمات التأشيرات والسفر</title>
 
-<!-- أيقونة علامة التبويب -->
-<link rel="icon" type="image/x-icon" href="f.png">
+    <!-- أيقونة علامة التبويب -->
+    <link rel="icon" type="image/x-icon" href="assets/images/f.png">
 
-<!-- وصف الموقع لمحركات البحث -->
-<meta name="description" content="موقع بصمة يقدم خدمات التأشيرات للسعودية، الإمارات، البحرين، عمان، قطر وتركيا. اطلب تأشيرتك الآن بسهولة واحترافية.">
+    <!-- وصف الموقع لمحركات البحث -->
+    <meta name="description" content="موقع بصمة يقدم خدمات التأشيرات للسعودية، الإمارات، البحرين، عمان، قطر وتركيا. اطلب تأشيرتك الآن بسهولة واحترافية.">
 
-<!-- كلمات مفتاحية تساعد في الظهور -->
-<meta name="keywords" content="تأشيرة, السعودية, الإمارات, البحرين, عمان, قطر, تركيا, خدمات تأشيرات, فيزا, سفر, موقع بصمة">
+    <!-- كلمات مفتاحية تساعد في الظهور -->
+    <meta name="keywords" content="تأشيرة, السعودية, الإمارات, البحرين, عمان, قطر, تركيا, خدمات تأشيرات, فيزا, سفر, موقع بصمة">
 
-<!-- اسم صاحب الموقع -->
-<meta name="author" content=" يوسف البدري">
+    <!-- اسم صاحب الموقع -->
+    <meta name="author" content="يوسف البدري">
 
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="بصمة - خدمات التأشيرات والسفر">
+    <meta property="og:description" content="احجز تأشيرتك بخطوة واحدة... وسافر بدون صداع ورق!">
+    <meta property="og:image" content="assets/images/f.png">
+    <meta property="og:url" content="https://basmh.online">
+    <meta property="og:type" content="website">
 
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="بصمة - خدمات التأشيرات والسفر">
+    <meta name="twitter:description" content="احجز تأشيرتك بخطوة واحدة... وسافر بدون صداع ورق!">
+    <meta name="twitter:image" content="assets/images/f.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- خطوط Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet">
 
-<!-- خطوط Google -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet">
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- أيقونات Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary-color: #1d1e1f;
-            --secondary-color: #D4AF37;
-            --accent-color: #0f0f0f;
-            --logo-orange: #FF6B35;
-            --logo-red: #E63946;
-            --logo-gradient: linear-gradient(135deg, #FF6B35, #E63946);
-            --light-color: #edf0df;
-            --dark-color: #212529;
-            --text-color: #333;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Cairo', 'Tajawal', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            background-color: #181f20;
-        }
-        
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        /* شريط التمرير المتحرك */
-        .marquee {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .marquee-content {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 20s linear infinite;
-        }
-        
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        /* التصميم العام */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--logo-gradient);
-            border-radius: 2px;
-        }
-
-        .section-title h2 {
-    text-align: center;
-}
-
-.main-word {
-    color: #FF6B35;
-    font-weight: bold;
-}
-        
-        /* شريط التنقل */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: linear-gradient(90deg, #1f1b1b, #2d2b2b);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 15px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-icon {
-            width: 50px;
-            height: 40px;
-            background: var(--text-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 10px;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(14, 13, 13, 0.3);
-            transition: var(--transition);
-            overflow: hidden;
-        }
-        
-        .logo-icon:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-        
-        .logo-image {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            filter: brightness(1.1) contrast(1.1);
-            transition: var(--transition);
-        }
-        
-        .logo-icon:hover .logo-image {
-            transform: scale(1.5);
-        }
-     .logo-text {
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: 'Aref Ruqaa Ink', sans-serif;
-    background: linear-gradient(270deg, #f5f5dc, #FF6B35, #f5f5dc);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 5s ease infinite;
-}
-.logo-text:hover {
-    transform: scale(1.1);
-}
-
-@keyframes shine {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}.call-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FF6B35;
-  padding: 12px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 50px;
-  height: 50px;
-}
-
-.call-icon svg {
-    height: 1.8rem;  /* حجم أكبر شوية */
-    vertical-align: middle;
-    transition: transform 0.3s ease;
-}
-
-.call-icon svg:hover {
-    transform: scale(1.2);
-}
-
-
-
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 20px;
-        }
-        
-        .nav-links a {
-            font-weight: 600;
-            font-size: 1rem;
-            position: relative;
-            color: #f5f5dc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #FF6B35;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #FF6B35;
-        }
-
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: white;
-            padding: 5px;
-        
-}
-
-        
-        /* القسم الرئيسي */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            min-height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #131212;
-            padding-top: 60px;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 0 15px;
-        }
-        
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #f5f0d9, #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(241, 239, 239, 0.5);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            background: linear-gradient(45deg, #f5f0d9, #f1e2d4);
-            text-shadow: 0 1px 3px rgba(241, 239, 239, 0.5);
-            padding: 12px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            white-space: nowrap;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-            margin: 8px;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--logo-gradient);
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #0f0f0f, #0f0f0f);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgb(236, 134, 18);
-        }
-        
-        /* قسم الخدمات */
-        .services {
-            background-color: #0f0f0f;
-            box-shadow: 0 5px 15px #f18406;
-        }
-
-        .services-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            gap: 5px;
-        }
-        
-        .filter-btn {
-            background:#181f20;
-            border: none;
-            padding: 8px 15px;
-            margin: 3px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: linear-gradient(45deg, #c4bdbb, #4a2fbd);
-            color: #df580a;
-            transform: scale(1.05);
-        }
-        
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        .service-card {
-            background: rgb(250, 245, 233);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 8px 12px rgba(245, 112, 3, 0.1);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
-        }
-    
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 10px 25px rgb(253, 72, 0);
-        }
-        
-        .service-header {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            background: rgba(93, 57, 84, 0.05);
-        }
-        
-        .flag {
-            width: 45px;
-            height: 28px;
-            margin-left: 5px;
-            border-radius: 4px;
-            box-shadow: none;
-        }.service-title {
-    font-size: 1.5rem;
-    margin-right: 10px; /* تضيف مسافة بين العلم والكلمة */
-}
-
-        
-        .service-price {
-            color: #FF6B35;
-            font-weight: 700;
-            font-size: 1.3rem;
-            margin: 8px 0;
-        }
-        
-        .service-details {
-            padding: 15px;
-            border-top: 1px solid #fc0d0d;
-        }
-        
-        .service-details ul {
-            list-style: none;
-            margin-bottom: 15px;
-        }
-        
-        .service-details li {
-            margin-bottom: 7px;
-            display: flex;
-            align-items: flex-start;
-            font-size: 0.95rem;
-        }
-        
-        .service-details li:before {
-            content: "✓";
-            color: var(--secondary-color);
-            margin-left: 8px;
-            font-weight: bold;
-        }
-        
-        .service-note {
-            background: rgba(93, 57, 84, 0.1);
-            padding: 8px;
-            border-radius: var(--border-radius);
-            font-size: 0.85rem;
-            margin-top: 12px;
-        }
-        
-        .service-btn {
-            width: 100%;
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: var(--border-radius);
-            margin-top: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .service-btn:hover {
-            background: var(--logo-gradient);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-        
-        /* قسم من نحن */
-        .about {
-            background: #0f0f0f;
-        }
-
-        .about-content {
-            display: flex;
-            color: #fdfcf0;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        .about-text {
-            flex: 1;
-            color: #fffbf4;
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .contact-info {
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.contact-info {
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* توسيط أفقي */
-    background: linear-gradient(135deg, #ffffff, rgba(250, 124, 20, 0.8));
-    color: #000; /* لون الخط أسود */
-    padding: 12px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    flex: 1;
-    min-width: 200px;
-    transition: 0.3s ease;
-    position: relative;
-    font-weight: 700; /* خط تقيل */
-    text-align: center; /* توسيط النص */
-}
-
-/* تأثير النيون عند مرور الماوس */
-.contact-item:hover {
-    box-shadow: 0 0 15px 4px rgba(250, 124, 20, 0.9), var(--box-shadow);
-    transform: scale(1.02);
-    z-index: 2;
-}
-
-
-
-        
-        .contact-icon {
-            background: var(--primary-color);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12px;
-            font-size: 1.1rem;
-        }
-        
-        /* قسم الأسئلة الشائعة */
-      .faq {
-    background-color: #0f0f0f;
-}
-
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    margin-bottom: 12px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    background: linear-gradient(135deg, rgba(250, 124, 20, 0.8), #1a1a1a);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* تأثير إضاءة عند مرور الماوس */
-.faq-item:hover {
-    box-shadow: 0 0 20px 6px rgba(250, 123, 20, 0.438), var(--box-shadow);
-    transform: scale(1.01);
-    z-index: 2;
-}
-
-.faq-question {
-    background: transparent; /* شفافة علشان نعرض الخلفية المدمجة للكارت */
-    color: #ffffff; /* لون النص والأيقونة */
-    padding: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
-    position: relative;
-     box-shadow: 0 0 20px 5px rgba(250, 124, 20, 0.9), var(--box-shadow);
-}
-
-/* الكلمة الرئيسية برتقالي */
-.faq-question span {
-    color: #FA7C14;
-}
-
-.faq-question:after {
-    content: "+";
-    font-size: 1.3rem;
-    color: #ffffff;
-}
-
-.faq-item.active .faq-question:after {
-    content: "-";
-}
-
-.faq-answer {
-    padding: 0 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: var(--transition);
-    font-size: 0.95rem;
-    background: #ffffff; /* خلفية بيضاء */
-    color: #0f0f0f; /* نص برتقالي */
-}
-
-.faq-item.active .faq-answer {
-    padding: 15px;
-    max-height: 500px;
-}
-
-        
-        /* قسم آراء العملاء */
-        .testimonials {
-            background: #0f0f0f;
-        }
-        
-       .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 25px;
-}
-
-.testimonial-card {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 25px;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* تأثير عند مرور الماوس */
-.testimonial-card:hover {
-    box-shadow: 0 0 15px 4px rgba(250, 124, 20, 0.5), var(--box-shadow); /* توهج برتقالي ناعم */
-    transform: scale(1.02); /* تكبير بسيط */
-    z-index: 2;
-}
-
-.testimonial-card:before {
-    content: "“";
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 4rem;
-    color: rgba(93, 57, 84, 0.1);
-    font-family: Georgia, serif;
-    line-height: 1;
-}
-
-        
-        .rating {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-        
-        .testimonial-text {
-            margin-bottom: 15px;
-            font-style: italic;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-        
-        /* تذييل الصفحة */
-        footer {
-            background: #0f0f0f;
-            color: rgb(252, 255, 227);
-            padding: 30px 0 15px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 25px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 220px;
-        }
-        
-        .footer-column h3 {
-            color: #ff9027d5;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .footer-column ul {
-            list-style-type: none;
-            
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-        
-        .footer-column ul li a {
-            color: rgba(248, 248, 218, 0.8);
-            transition: var(--transition);
-        }
-        
-        .footer-column ul li a:hover {
-            color: rgb(226, 131, 6);
-            padding-right: 5px;
-        }
-        
-        .social-icons {
-            display: flex ;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        
-        .social-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgb(248, 242, 207);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            font-size: 1rem;
-        }
-        
-        .social-icon:hover {
-            background: #e27c07;
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(238, 131, 9, 0.514);
-            font-size: 0.85rem;
-            color: rgb(241, 122, 10);
-        }
-        
-        /* زر الواتساب العائم */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 55px;
-            height: 55px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 100;
-            transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-        
-        /* قسم التطوير */
-        .development {
-            background: linear-gradient(to bottom, #0f0f0f, #0f0f0f);
-        }
-        
-        .dev-icon {
-            width: 45px;
-            height: 28px;
-            margin-left: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* التصميم المتجاوب */
-        @media (max-width: 992px) {
-            .container {
-                padding: 0 10px;
-            }
-            
-            .about-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                padding: 10px 18px;
-            }
-            
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar-container {
-                padding: 10px;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background: #1f1b1b;
-                flex-direction: column;
-                padding: 20px 0;
-                transition: all 0.4s ease;
-                z-index: 999;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 0;
-                width: 100%;
-            }
-            
-            .nav-links a {
-                display: block;
-                padding: 12px 20px;
-                font-size: 1.1rem;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-            
-            .nav-links a:after {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .logo-text {
-                font-size: 1.6rem;
-            }
-            
-            .hero {
-                min-height: 500px;
-                padding-top: 70px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-                padding: 10px 15px;
-                white-space: normal;
-            }
-            
-            .btn {
-                padding: 9px 20px;
-                font-size: 0.95rem;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
-                margin-bottom: 30px;
-            }
-            
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 25px;
-            }
-            
-            .contact-item {
-                min-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 25px;
-            }
-            
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
-            .btn {
-                display: block;
-                width: 100%;
-                margin: 8px auto;
-                max-width: 280px;
-            }
-            
-            .service-card {
-                padding: 0;
-            }
-            
-            .about-image {
-                margin-top: 15px;
-            }
-            
-            .whatsapp-float {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
-                bottom: 20px;
-                left: 20px;
-            }
-        }
-    </style>
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
     
@@ -993,7 +49,7 @@
         <div class="navbar-container container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="f.png" alt="بصمة لوجو" class="logo-image">
+                    <img src="assets/images/f.png" alt="بصمة لوجو" class="logo-image">
                 </div>
                 <div class="logo-text">بصمة</div>
             </div>
@@ -1003,19 +59,17 @@
             <ul class="nav-links">
                 <li><a href="#home">الرئيسية</a></li>
                 <li><a href="#services">الخدمات</a></li>
-                <li><a href="#development">التطوير</a></li>
+                <li><a href="#visa-platforms">منصات التأشيرات</a></li>
+                <li><a href="#partner">كن شريكاً</a></li>
                 <li><a href="#about">من نحن</a></li>
                 <li><a href="#faq">الأسئلة الشائعة</a></li>
                 <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#contact-support">اتصل بنا</a></li>
                 <a href="tel:01018516175" title="اتصل الآن" class="call-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-    <path fill="#f5f5dc" d="M511.1 387.6c-1.1-7-5.8-13-12.1-15.7l-104-44.5c-6.5-2.8-13.9-2.1-19.8 1.8l-52.5 34.4c-45.4-23.8-82.3-60.8-106-106.2l34.3-52.3c3.9-6 4.6-13.4 1.8-19.8l-44.5-104c-2.7-6.3-8.6-11-15.7-12.1-7.1-1.1-14.2.7-19.6 4.9l-65.6 52.5c-5.2 4.2-8.3 10.6-8.3 17.4 0 189.8 154.2 344 344 344 6.7 0 13.1-3 17.4-8.3l52.5-65.6c4.1-5.4 6-12.5 4.9-19.6z"/>
-  </svg>
-
-
-</a>
-
-</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path fill="#f5f5dc" d="M511.1 387.6c-1.1-7-5.8-13-12.1-15.7l-104-44.5c-6.5-2.8-13.9-2.1-19.8 1.8l-52.5 34.4c-45.4-23.8-82.3-60.8-106-106.2l34.3-52.3c3.9-6 4.6-13.4 1.8-19.8l-44.5-104c-2.7-6.3-8.6-11-15.7-12.1-7.1-1.1-14.2.7-19.6 4.9l-65.6 52.5c-5.2 4.2-8.3 10.6-8.3 17.4 0 189.8 154.2 344 344 344 6.7 0 13.1-3 17.4-8.3l52.5-65.6c4.1-5.4 6-12.5 4.9-19.6z"/>
+                    </svg>
+                </a>
             </ul>
         </div>
     </nav>
@@ -1024,7 +78,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>احجز تأشيرتك بخطوة واحدة… وسافر بدون صداع ورق!</h1>
-            <p>مع بصمة أنت في أيد أمينة... ثقتك فينا هي أكبر مسئولية علينا.</p>
+            <p>مع بصمة أنت في أيد أمينة... ثقتك فينا هي أكبر مسئولية علينا.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn btn-primary">شوف الخدمات</a>
                 <a href="https://wa.me/201018516175" target="_blank" class="btn btn-outline">اطلب تأشيرتك الآن</a>
@@ -1039,16 +93,22 @@
                 <h2><span class="main-word">خدماتنا المميزة</span></h2>
             </div>
             
+            <div class="services-filter">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="gulf">دول الخليج</button>
+                <button class="filter-btn" data-filter="other">دول أخرى</button>
+            </div>
+            
             <div class="services-grid">
                 <!-- بطاقة خدمة السعودية -->
-                <div class="service-card">
+                <div class="service-card" data-category="gulf">
                     <div class="service-header">
                         <img class="flag" src="https://flagcdn.com/48x36/sa.png"
-  srcset="https://flagcdn.com/96x72/sa.png 2x,
-    https://flagcdn.com/144x108/sa.png 3x"
-  width="48"
-  height="36"
-  alt="Saudi Arabia">
+                            srcset="https://flagcdn.com/96x72/sa.png 2x,
+                            https://flagcdn.com/144x108/sa.png 3x"
+                            width="48"
+                            height="36"
+                            alt="Saudi Arabia">
                         <h3 class="service-title">السعودية 🇸🇦</h3>
                     </div>
                     <div class="service-details">
@@ -1058,7 +118,7 @@
                             <li>نقل كفالة على مؤسسة فردية</li>
                             <li>تفويض تأشيرة</li>
                             <li>عقد اجازة</li>
-                      </ul>
+                        </ul>
                         <div class="service-note">
                             ✅ ملاحظة: هذه التاشيره بدون عمل
                         </div>
@@ -1067,27 +127,26 @@
                 </div>
                 
                 <!-- بطاقة خدمة الإمارات -->
-                <div class="service-card">
+                <div class="service-card" data-category="gulf">
                     <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/ae.png"
-            srcset="https://flagcdn.com/96x72/ae.png 2x, https://flagcdn.com/144x108/ae.png 3x"
-            width="48"
-            height="36"
-            alt="United Arab Emirates"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">الإمارات 🇦🇪</h3>
-</div>
-
+                        <div class="flag">
+                            <img 
+                                src="https://flagcdn.com/48x36/ae.png"
+                                srcset="https://flagcdn.com/96x72/ae.png 2x, https://flagcdn.com/144x108/ae.png 3x"
+                                width="48"
+                                height="36"
+                                alt="United Arab Emirates"
+                                style="border-radius: 5px;"
+                            >
+                        </div>
+                        <h3 class="service-title">الإمارات 🇦🇪</h3>
+                    </div>
                     <div class="service-details">
                         <ul>
                             <li>تأشيرات زيارة VIP (14 يوم - شهر - شهرين)</li>
                             <li>مهن عليا</li>
-                            <li> تاشيرة مهن ضعيفه</li>
-                            <li> اقامة سنتين </li>
+                            <li>تاشيرة مهن ضعيفه</li>
+                            <li>اقامة سنتين</li>
                         </ul>
                         <div class="service-info">
                             <p><strong>مدة الإصدار:</strong> 1 - 5 أيام</p>
@@ -1100,28 +159,27 @@
                 </div>
                 
                 <!-- بطاقة خدمة عُمان -->
-                <div class="service-card">
+                <div class="service-card" data-category="gulf">
                     <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/om.png"
-            srcset="https://flagcdn.com/96x72/om.png 2x, https://flagcdn.com/144x108/om.png 3x"
-            width="48"
-            height="36"
-            alt="Oman"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">عُمان 🇴🇲</h3>
-</div>
-
+                        <div class="flag">
+                            <img 
+                                src="https://flagcdn.com/48x36/om.png"
+                                srcset="https://flagcdn.com/96x72/om.png 2x, https://flagcdn.com/144x108/om.png 3x"
+                                width="48"
+                                height="36"
+                                alt="Oman"
+                                style="border-radius: 5px;"
+                            >
+                        </div>
+                        <h3 class="service-title">عُمان 🇴🇲</h3>
+                    </div>
                     <div class="service-details">
                         <ul>
                             <li>تأشيرة شهر,10 ايام</li>
                             <li>تنفيذ 4 ايام</li>
                             <li>قابلة للتجديد</li>
                             <li>تاشيره لجميع الجنسيات</li>
-                            <li> سهولة في الاجراءت</li>
+                            <li>سهولة في الاجراءت</li>
                         </ul>
                         <div class="service-note">
                             ✅ ملاحظة: هذه التاشيره بدون عمل
@@ -1131,20 +189,20 @@
                 </div>
                 
                 <!-- بطاقة خدمة البحرين -->
-                <div class="service-card">
+                <div class="service-card" data-category="gulf">
                     <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/bh.png"
-            srcset="https://flagcdn.com/96x72/bh.png 2x, https://flagcdn.com/144x108/bh.png 3x"
-            width="48"
-            height="36"
-            alt="Bahrain"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">البحرين 🇧🇭</h3>
-</div>
+                        <div class="flag">
+                            <img 
+                                src="https://flagcdn.com/48x36/bh.png"
+                                srcset="https://flagcdn.com/96x72/bh.png 2x, https://flagcdn.com/144x108/bh.png 3x"
+                                width="48"
+                                height="36"
+                                alt="Bahrain"
+                                style="border-radius: 5px;"
+                            >
+                        </div>
+                        <h3 class="service-title">البحرين 🇧🇭</h3>
+                    </div>
                     <div class="service-details">
                         <ul>
                             <li>تاشيره اسبوعين</li>
@@ -1159,58 +217,56 @@
                 </div>
                 
                 <!-- بطاقة خدمة قطر -->
-                <div class="service-card">
-                   <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/qa.png"
-            srcset="https://flagcdn.com/96x72/qa.png 2x, https://flagcdn.com/144x108/qa.png 3x"
-            width="48"
-            height="36"
-            alt="Qatar"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">قطر 🇶🇦</h3>
-</div>
-
+                <div class="service-card" data-category="gulf">
+                    <div class="service-header">
+                        <div class="flag">
+                            <img 
+                                src="https://flagcdn.com/48x36/qa.png"
+                                srcset="https://flagcdn.com/96x72/qa.png 2x, https://flagcdn.com/144x108/qa.png 3x"
+                                width="48"
+                                height="36"
+                                alt="Qatar"
+                                style="border-radius: 5px;"
+                            >
+                        </div>
+                        <h3 class="service-title">قطر 🇶🇦</h3>
+                    </div>
                     <div class="service-details">
                         <ul>
-                            <li>تاشيره شهر </li>
+                            <li>تاشيره شهر</li>
                             <li>تنفيذ 4 ايام</li>
                             <li>قابلة للتجديد</li>
                         </ul>
                         <div class="service-note">
-                               ✅ ملاحظة: هذه التاشيره بدون عمل
+                            ✅ ملاحظة: هذه التاشيره بدون عمل
                         </div>
                         <button class="service-btn" onclick="openWhatsApp('خدمة قطر')">اعرف التفاصيل</button>
                     </div>
                 </div>
                 
                 <!-- بطاقة خدمة تركيا -->
-                <div class="service-card">
+                <div class="service-card" data-category="other">
                     <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/tr.png"
-            srcset="https://flagcdn.com/96x72/tr.png 2x, https://flagcdn.com/144x108/tr.png 3x"
-            width="48"
-            height="36"
-            alt="Turkey"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">تركيا 🇹🇷</h3>
-</div>
-
+                        <div class="flag">
+                            <img 
+                                src="https://flagcdn.com/48x36/tr.png"
+                                srcset="https://flagcdn.com/96x72/tr.png 2x, https://flagcdn.com/144x108/tr.png 3x"
+                                width="48"
+                                height="36"
+                                alt="Turkey"
+                                style="border-radius: 5px;"
+                            >
+                        </div>
+                        <h3 class="service-title">تركيا 🇹🇷</h3>
+                    </div>
                     <div class="service-details">
                         <ul>
-                            <li>شهر </li>
+                            <li>شهر</li>
                             <li>السن من 45:65</li>
-                            <li> تنفيذ في اسبوع</li>
+                            <li>تنفيذ في اسبوع</li>
                         </ul>
                         <div class="service-note">
-                              ✅ ملاحظة: هذه التاشيره بدون عمل
+                            ✅ ملاحظة: هذه التاشيره بدون عمل
                         </div>
                         <button class="service-btn" onclick="openWhatsApp('خدمة تركيا')">اعرف التفاصيل</button>
                     </div>
@@ -1219,86 +275,102 @@
         </div>
     </section>
     
-    <!-- قسم التطوير والبرمجة -->
-    <section class="development" id="development">
+    <!-- قسم منصات التأشيرات -->
+    <section class="visa-platforms" id="visa-platforms">
         <div class="container">
             <div class="section-title">
-                <h2><span class="main-word">خدمات الاوراق</span></h2>
+                <h2><span class="main-word">منصات التأشيرات الرسمية</span></h2>
             </div>
             
-            <div class="services-grid">
-                <!-- بطاقة تطوير المواقع -->
-                <div class="service-card">
-                    <div class="service-header">
-                       <div class="dev-icon">
-    <i class="fas fa-id-badge" style="color: var(--logo-orange); font-size: 1.8rem;"></i>
-</div>
-
-                        <h3 class="service-title"> تغير المهنة</h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li> تغير جميع المهن الغير حكوميه</li>
-                            <li>متاحه للسيدات </li>
-                            <li>(مندوب مبيعات,مبرمج,عامة تعبئة,..) </li>
-                            <li>برنت تامينات</li>
-                            <li>اورق قانوني  </li>
-                          
-                        </ul>
-                        <div class="service-note">
-                         🎏  التنفيذ خلال 3 ايام
+            <div class="platforms-grid">
+                <!-- السعودية -->
+                <div class="platform-card">
+                    <img class="platform-flag" src="https://flagcdn.com/96x72/sa.png" alt="Saudi Arabia">
+                    <h3 class="platform-title">المملكة العربية السعودية</h3>
+                    <p>المنصة الرسمية للتأشيرات السياحية والزيارة</p>
+                    <a href="https://visa.visitsaudi.com/" target="_blank" class="platform-link">زيارة المنصة <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <!-- الإمارات -->
+                <div class="platform-card">
+                    <img class="platform-flag" src="https://flagcdn.com/96x72/ae.png" alt="UAE">
+                    <h3 class="platform-title">الإمارات العربية المتحدة</h3>
+                    <p>الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ</p>
+                    <a href="https://smartservices.icp.gov.ae" target="_blank" class="platform-link">زيارة المنصة <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <!-- عمان -->
+                <div class="platform-card">
+                    <img class="platform-flag" src="https://flagcdn.com/96x72/om.png" alt="Oman">
+                    <h3 class="platform-title">سلطنة عمان</h3>
+                    <p>شرطة عمان السلطانية - نظام التأشيرات الإلكتروني</p>
+                    <a href="https://evisa.rop.gov.om/" target="_blank" class="platform-link">زيارة المنصة <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <!-- البحرين -->
+                <div class="platform-card">
+                    <img class="platform-flag" src="https://flagcdn.com/96x72/bh.png" alt="Bahrain">
+                    <h3 class="platform-title">مملكة البحرين</h3>
+                    <p>نظام التأشيرات الإلكتروني</p>
+                    <a href="https://www.evisa.gov.bh/" target="_blank" class="platform-link">زيارة المنصة <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <!-- قطر -->
+                <div class="platform-card">
+                    <img class="platform-flag" src="https://flagcdn.com/96x72/qa.png" alt="Qatar">
+                    <h3 class="platform-title">دولة قطر</h3>
+                    <p>وزارة الداخلية - خدمات التأشيرات الإلكترونية</p>
+                    <a href="https://portal.moi.gov.qa/wps/portal/MOIInternet/services/inquiries/visaservices" target="_blank" class="platform-link">زيارة المنصة <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <!-- تركيا -->
+                <div class="platform-card">
+                    <img class="platform-flag" src="https://flagcdn.com/96x72/tr.png" alt="Turkey">
+                    <h3 class="platform-title">الجمهورية التركية</h3>
+                    <p>نظام التأشيرات الإلكتروني</p>
+                    <a href="https://www.evisa.gov.tr/ar/" target="_blank" class="platform-link">زيارة المنصة <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم كن شريكاً -->
+    <section class="partner" id="partner">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="main-word">كن شريكاً معنا</span></h2>
+            </div>
+            
+            <div class="partner-content">
+                <p>نرحب بالوكالات والأفراد الراغبين في التعاون معنا لتقديم خدمات التأشيرات بجودة عالية. نحن نبحث عن شركاء يشاركوننا رؤيتنا في تقديم خدمة متميزة وموثوقة لعملائنا.</p>
+                
+                <div class="partner-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
                         </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة تغير المهنة')">اطلب الآن</button>
+                        <h3 class="benefit-title">عمولات مجزية</h3>
+                        <p class="benefit-text">احصل على عمولات تنافسية على كل تأشيرة يتم إصدارها من خلالك</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="benefit-title">دعم فني متكامل</h3>
+                        <p class="benefit-text">فريق دعم متخصص لمساعدتك في جميع مراحل العمل</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="benefit-title">فرص نمو مستمرة</h3>
+                        <p class="benefit-text">إمكانية توسيع نطاق التعاون وزيادة الأرباح مع مرور الوقت</p>
                     </div>
                 </div>
                 
-                <!-- بطاقة تطبيقات الجوال -->
-                <div class="service-card">
-                    <div class="service-header">
-                       <div class="dev-icon">
-    <i class="fas fa-passport" style="color: var(--logo-red); font-size: 1.8rem;"></i>
-</div>
-
-                        <h3 class="service-title"> تجهيز ملف شنغن</h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li>نموذج طلب التأشيرة</li>
-                            <li> متاح جميع دول شنغن</li>
-                            <li> ترجمة الملفات</li>
-                            <li> حجز موعد</li>
-                            <li> تجهز الاوراق </li>
-                        </ul>
-                        <div class="service-note">
-                            🎏  هذه الخدمة تتم مع منصة AselPro
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة  التقديم لدولة ')">اطلب الآن</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة الاستشارات التقنية -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="dev-icon">
-                            <i class="fas fa-lightbulb" style="color: var(--secondary-color); font-size: 1.8rem;"></i>
-                        </div>
-                        <h3 class="service-title">الاستشارات  </h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li>مساعدتك في اختيار التأشيرة المناسبة</li>
-                          <li>توضيح الأوراق المطلوبة حسب كل دولة</li>
-                         <li>مراجعة بياناتك قبل التقديم</li>
-                           <li>متابعة طلبك بدقة</li>
-                           <li>
-الرد على جميع استفساراتك بدقة واهتمام</li>
-                        </ul>
-                        <div class="service-note">
-                            🎏 هذة الخدمه مجانية
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة الاستشارات ')">اطلب الآن</button>
-                    </div>
-                </div>
+                <a href="https://wa.me/201018516175?text=أرغب%20في%20التعاون%20معكم%20كشريك" target="_blank" class="btn btn-primary">تواصل معنا للشراكة</a>
             </div>
         </div>
     </section>
@@ -1314,7 +386,7 @@
                 <div class="about-text">
                     <p>في بصمة، إحنا بوابتك الآمنة لعالم السفر!</p>
                     <p>دورنا هو توصيلك بأفضل مكاتب السفر المرخصة والمعتمدة رسميًا من السفارات، علشان نضمنلك خدمة موثوقة وإجراءات سليمة من البداية للنهاية.</p>
-                    <p>بنهتم بكل التفاصيل، وبنتعامل بس مع شركاء مضمونين ومسجلين قانونيًا، علشان تكون رحلتك على أعلى مستوى من الاحترافية والاطمئنان.</p>
+                    <p>بنهتم بكل التفاصيل، وبنتعامل بس مع شركاء مضمونين ومسجلين قانونيًا، علشان تكون رحلتك على أعلى مستوى من الاحترافية والاطمئنان.</p>
                     <div class="contact-info">
                         <div class="contact-item">
                             <div class="contact-icon">
@@ -1337,6 +409,86 @@
         </div>
     </section>
     
+    <!-- قسم الاتصال والدعم -->
+    <section class="contact-support" id="contact-support">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="main-word">اتصل بنا للدعم</span></h2>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>واتساب</h3>
+                    <p>تواصل معنا مباشرة عبر الواتساب للحصول على استجابة سريعة</p>
+                    <a href="https://wa.me/201018516175" target="_blank" class="contact-link">
+                        راسلنا الآن <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>أرسل استفسارك عبر البريد الإلكتروني وسنرد عليك في أقرب وقت</p>
+                    <a href="mailto:visa@basmh.online" class="contact-link">
+                        visa@basmh.online <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>العنوان</h3>
+                    <p>يمكنك زيارتنا في مقر الشركة</p>
+                    <p>North 90th Street, Fifth Settlement, New Cairo, Egypt</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" class="form-control" placeholder="الاسم" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" class="form-control" placeholder="البريد الإلكتروني" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" class="form-control" placeholder="رسالتك" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم المدونة (مساحة للمستقبل) -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="main-word">مدونة السفر</span></h2>
+            </div>
+            
+            <div class="blog-intro">
+                <p>نشارك معك أحدث المعلومات والنصائح حول السفر والتأشيرات لمساعدتك في التخطيط لرحلتك القادمة بسهولة وثقة.</p>
+            </div>
+            
+            <div class="blog-coming-soon">
+                <h3>قريباً...</h3>
+                <p>نعمل حالياً على إعداد محتوى مفيد ومتنوع لمساعدتك في رحلاتك. اشترك ليصلك إشعار عند نشر أول مقالاتنا.</p>
+                
+                <form id="subscribeForm" class="subscribe-form">
+                    <input type="email" id="subscribeEmail" class="subscribe-input" placeholder="أدخل بريدك الإلكتروني" required>
+                    <button type="submit" class="subscribe-btn">اشترك</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
     <!-- قسم الأسئلة الشائعة -->
     <section class="faq" id="faq">
         <div class="container">
@@ -1346,16 +498,16 @@
             
             <div class="faq-container">
                 <div class="faq-item">
-                    <div class="faq-question">هل الأسعار دي شاملة حجز الطيران والفندق </div>
+                    <div class="faq-question">هل الأسعار دي شاملة حجز الطيران والفندق</div>
                     <div class="faq-answer">
-                        <p>لا,الاسعار تشمل سعر التاشيره فقط</p>
+                        <p>لا، الاسعار تشمل سعر التاشيره فقط</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">ما هي طرق الدفع ,والعملة؟</div>
+                    <div class="faq-question">ما هي طرق الدفع، والعملة؟</div>
                     <div class="faq-answer">
-                        <p>متاح الدفع بجميع الطرق المحلية،والعالميه  بجميع عملات العالم.</p>
+                        <p>متاح الدفع بجميع الطرق المحلية، والعالميه بجميع عملات العالم.</p>
                     </div>
                 </div>
                 
@@ -1370,6 +522,20 @@
                     <div class="faq-question">هل في تقسيط للدفع؟</div>
                     <div class="faq-answer">
                         <p>حاليًا لا نوفر خدمة التقسيط، ولكن قريبًا سنوفر طرق سداد مرنة تناسب جميع العملاء.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">ما هي المستندات المطلوبة للتقديم؟</div>
+                    <div class="faq-answer">
+                        <p>تختلف المستندات المطلوبة حسب نوع التأشيرة والدولة. يمكنك التواصل معنا عبر الواتساب للحصول على قائمة المستندات المطلوبة لحالتك الخاصة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">كم المدة اللازمة لإصدار التأشيرة؟</div>
+                    <div class="faq-answer">
+                        <p>تختلف مدة إصدار التأشيرة حسب الدولة ونوع التأشيرة، وتتراوح عادة بين 2-7 أيام عمل. يمكنك الاطلاع على التفاصيل الخاصة بكل خدمة أو التواصل معنا للحصول على معلومات دقيقة.</p>
                     </div>
                 </div>
             </div>
@@ -1435,12 +601,13 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>عن بصمة</h3>
-<p>نسعى لتقديم خدمات تأشيرات موثوقة باحترافية واهتمام بكل التفاصيل.
-بصمتك... أمانة.</p>                    <div class="social-icons">
+                    <p>نسعى لتقديم خدمات تأشيرات موثوقة باحترافية واهتمام بكل التفاصيل.
+                    بصمتك... أمانة.</p>
+                    <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/201018516175" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -1448,11 +615,13 @@
                     <h3>روابط سريعة</h3>
                     <ul>
                         <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#services">تغير مهنة</a></li>
-                        <li><a href="#development">نقل كفالة</a></li>
-                        <li><a href="#about">تفويض </a></li>
-                        <li><a href="#faq">السعودية</a></li>
-                        <li><a href="#testimonials">الامارات</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#visa-platforms">منصات التأشيرات</a></li>
+                        <li><a href="#partner">كن شريكاً</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#faq">الأسئلة الشائعة</a></li>
+                        <li><a href="#testimonials">آراء العملاء</a></li>
+                        <li><a href="#contact-support">اتصل بنا</a></li>
                     </ul>
                 </div>
                 
@@ -1463,13 +632,13 @@
                         <li><i class="fas fa-phone"></i> 01143788283</li>
                         <li><i class="fas fa-phone"></i> 01099574077</li>
                         <li><i class="fas fa-envelope"></i> visa@basmh.online</li>
-                        <li><i class="fas fa-map-marker-alt"></i> North 90th Street, Fifth Settlement, New Cairo,Egypt</li>
+                        <li><i class="fas fa-map-marker-alt"></i> North 90th Street, Fifth Settlement, New Cairo, Egypt</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                &copy; 2023 بصمة - جميع الحقوق محفوظة
+                &copy; 2025 بصمة - جميع الحقوق محفوظة
             </div>
         </div>
     </footer>
@@ -1479,104 +648,7 @@
         <i class="fab fa-whatsapp"></i>
     </a>
     
-    <script>
-                    // Smooth scrolling for navigation links
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            // Scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe service cards and testimonials
-            document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-            
-            // Mobile menu functionality
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                this.querySelector('i').classList.toggle('fa-bars');
-                this.querySelector('i').classList.toggle('fa-times');
-            });
-            
-            // Close menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                });
-            });
-            
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-            
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.style.backgroundColor = 'rgba(33, 27, 27, 0.98)';
-                    navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-                } else {
-                    navbar.style.backgroundColor = 'rgba(33, 27, 27, 0.95)';
-                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
-                }
-            });
-        });
-        
-        // فتح رابط واتساب مع نص الخدمة المطلوبة
-        function openWhatsApp(serviceName) {
-            const phone = '201018516175';
-            const text = `أرغب في خدمة ${serviceName}`;
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-  !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="gMMhh9ZF35fOptlL7Scrgyy5xUPIApJv";;analytics.SNIPPET_VERSION="5.2.0";
-  analytics.load("gMMhh9ZF35fOptlL7Scrgyy5xUPIApJv");
-  analytics.page();
-  }}();
-
-    </script>
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
-
 </html>
-
