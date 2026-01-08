@@ -1,937 +1,1555 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>بصمة - خدمات التأشيرات</title>
-
-<!-- أيقونة علامة التبويب -->
-<link rel="icon" type="image/x-icon" href="f.png">
-
-<!-- وصف الموقع لمحركات البحث -->
-<meta name="description" content="موقع بصمة يقدم خدمات التأشيرات للسعودية، الإمارات، البحرين، عمان، قطر وتركيا. اطلب تأشيرتك الآن بسهولة واحترافية.">
-
-<!-- كلمات مفتاحية تساعد في الظهور -->
-<meta name="keywords" content="تأشيرة, السعودية, الإمارات, البحرين, عمان, قطر, تركيا, خدمات تأشيرات, فيزا, سفر, موقع بصمة">
-
-<!-- اسم صاحب الموقع -->
-<meta name="author" content=" يوسف البدري">
-
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- خطوط Google -->
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet">
-
-<!-- أيقونات Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بصمة - خدمات التأشيرات</title>
+    
+    <!-- أيقونة علامة التبويب -->
+    <link rel="icon" type="image/x-icon" href="icon/b.png">
+    
+    <!-- وصف الموقع لمحركات البحث -->
+    <meta name="description" content="موقع بصمة يقدم خدمات التأشيرات للسعودية، الإمارات، البحرين، عمان، قطر وتركيا. اطلب تأشيرتك الآن بسهولة واحترافية.">
+    
+    <!-- كلمات مفتاحية تساعد في الظهور -->
+    <meta name="keywords" content="تأشيرة, السعودية, الإمارات, البحرين, عمان, قطر, تركيا, خدمات تأشيرات, فيزا, سفر, موقع بصمة">
+    
+    <!-- اسم صاحب الموقع -->
+    <meta name="author" content="يوسف البدري">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- خطوط Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&family=Tajawal:wght@200;300;400;500;700&family=Aref+Ruqaa+Ink&display=swap" rel="stylesheet">
+    
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
-            --primary-color: #1d1e1f;
-            --secondary-color: #D4AF37;
-            --accent-color: #0f0f0f;
-            --logo-orange: #FF6B35;
+            /* تغيير الألوان للوضع الداكن */
+            --primary-color: #121212;
+            --secondary-color: #d4560e;
+            --accent-color: #0a0a0a;
+            --logo-orange: #d4560e; /* تغيير لون الشعار إلى برتقالي */
             --logo-red: #E63946;
-            --logo-gradient: linear-gradient(135deg, #FF6B35, #E63946);
-            --light-color: #edf0df;
-            --dark-color: #212529;
-            --text-color: #333;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --logo-gradient: linear-gradient(135deg, #FFA500, #E63946, #FFD700);
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+            --text-color: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #868282;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            --box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            --box-shadow-lg: 0 20px 60px rgba(0,0,0,0.4);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --gradient-bg: linear-gradient(135deg, #02020394 0%,rgb(8, 8, 8) 50%, #2910014d 100%);
+            --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            --gradient-hover: linear-gradient(135deg, rgba(255,165,0,0.2) 0%, rgba(230,57,70,0.2) 100%);
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: 'Cairo', 'Tajawal', sans-serif;
-            line-height: 1.6;
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--primary-color);
             color: var(--text-color);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            background-color: #181f20;
+            line-height: 1.6;
         }
-        
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-            transition: var(--transition);
-        }
-        
-        /* شريط التمرير المتحرك */
-        .marquee {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 10px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .marquee-content {
-            display: inline-block;
-            padding-left: 100%;
-            animation: marquee 20s linear infinite;
-        }
-        
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        /* التصميم العام */
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
 
-        section {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--logo-gradient);
-            border-radius: 2px;
-        }
-
-        .section-title h2 {
-    text-align: center;
-}
-
-.main-word {
-    color: #FF6B35;
-    font-weight: bold;
-}
-        
         /* شريط التنقل */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: linear-gradient(90deg, #1f1b1b, #2d2b2b);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            background-color: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            transition: all 0.3s ease;
+            padding: 10px 0;
+            transition: var(--transition);
         }
-        
+
         .navbar-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 15px;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo-icon {
-            width: 50px;
+            width: 40px;
             height: 40px;
-            background: var(--text-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin-left: 10px;
-            position: relative;
-            box-shadow: 0 4px 15px rgba(14, 13, 13, 0.3);
-            transition: var(--transition);
-            overflow: hidden;
         }
-        
-        .logo-icon:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
-        }
-        
+
         .logo-image {
-            width: 50px;
-            height: 50px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
-            filter: brightness(1.1) contrast(1.1);
-            transition: var(--transition);
         }
-        
-        .logo-icon:hover .logo-image {
-            transform: scale(1.5);
-        }
-     .logo-text {
-    font-size: 2.5rem;
-    font-weight: 700;
-    font-family: 'Aref Ruqaa Ink', sans-serif;
-    background: linear-gradient(270deg, #f5f5dc, #FF6B35, #f5f5dc);
-    background-size: 600% 600%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 5s ease infinite;
-}
-.logo-text:hover {
-    transform: scale(1.1);
-}
 
-@keyframes shine {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}.call-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #FF6B35;
-  padding: 12px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 50px;
-  height: 50px;
-}
-
-.call-icon svg {
-    height: 1.8rem;  /* حجم أكبر شوية */
-    vertical-align: middle;
-    transition: transform 0.3s ease;
-}
-
-.call-icon svg:hover {
-    transform: scale(1.2);
-}
-
-
-
-        
         .nav-links {
             display: flex;
             list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 20px;
-        }
-        
-        .nav-links a {
-            font-weight: 600;
-            font-size: 1rem;
-            position: relative;
-            color: #f5f5dc;
-            text-decoration: none;
-            transition: color 0.3s ease;
+            margin-right: auto;
         }
 
-        .nav-links a:after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #FF6B35;
-            transition: width 0.3s ease;
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 16px;
         }
 
         .nav-links a:hover {
-            color: #FF6B35;
+            color: var(--logo-orange);
         }
 
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
         .mobile-menu-btn {
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            color: var(--text-color);
+            font-size: 24px;
             cursor: pointer;
-            color: white;
-            padding: 5px;
-        
-}
+        }
 
-        
-        /* القسم الرئيسي */
+        /* قسم الهيدر */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.2) 0%, rgba(22, 33, 62, 0.1) 50%, rgba(15, 15, 15, 0.3) 100%);
             height: 100vh;
             min-height: 600px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #131212;
-            padding-top: 60px;
+            color: var(--text-color);
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
         }
+
+        /* صورة الهيدر في HTML */
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+            filter: brightness(0.7) contrast(1.1);
+        }
+
+        /* تحسين الصورة للشاشات المختلفة */
         
         .hero-content {
+            position: relative;
+            z-index: 1;
             max-width: 800px;
-            padding: 0 15px;
+            padding: 0 20px;
         }
-        
-        .hero h1 {
-            font-size: 2.2rem;
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, #f5f0d9, #ffffff);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 2px 4px rgba(241, 239, 239, 0.5);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-family: 'Aref Ruqaa Ink', serif; /* تغيير الفونت */
         }
-        
-        .hero p {
-            font-size: 1.2rem;
+
+        .hero-subtitle {
+            font-size: 1.5rem;
             margin-bottom: 30px;
-            background: linear-gradient(45deg, #f5f0d9, #f1e2d4);
-            text-shadow: 0 1px 3px rgba(241, 239, 239, 0.5);
-            padding: 12px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            white-space: nowrap;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-            margin: 8px;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--logo-gradient);
-            color: white;
-            border: none;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #0f0f0f, #0f0f0f);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgb(236, 134, 18);
-        }
-        
-        /* قسم الخدمات */
-        .services {
-            background-color: #0f0f0f;
-            box-shadow: 0 5px 15px #f18406;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            height: 40px;
         }
 
-        .services-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-            gap: 5px;
-        }
-        
-        .filter-btn {
-            background:#181f20;
-            border: none;
-            padding: 8px 15px;
-            margin: 3px;
-            border-radius: 30px;
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--logo-orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
-            font-size: 0.9rem;
-            cursor: pointer;
+            font-size: 18px;
             transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: linear-gradient(45deg, #c4bdbb, #4a2fbd);
-            color: #df580a;
-            transform: scale(1.05);
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
-        
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        .service-card {
-            background: rgb(250, 245, 233);
-            border-radius: var(--border-radius);
+
+        /* شريط العروض الجديد تحت الهيدر - مرفوع للأعلى */
+        .offer-bar {
+            background: linear-gradient(90deg, 
+                #ff6b35 0%, 
+                #ff9e5c 25%, 
+                #ff6b35 50%, 
+                #ff9e5c 75%, 
+                #ff6b35 100%);
+            background-size: 200% 100%;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-weight: 700;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            animation: offerBarAnimation 3s ease-in-out infinite alternate, pulse 2s ease-in-out infinite;
             overflow: hidden;
-            box-shadow: 0 8px 12px rgba(245, 112, 3, 0.1);
-            transition: var(--transition);
-            border-top: 4px solid var(--primary-color);
+            margin: 0;
         }
-    
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 10px 25px rgb(253, 72, 0);
+
+        @keyframes offerBarAnimation {
+            0% {
+                background-position: 0% 0;
+            }
+            100% {
+                background-position: 100% 0;
+            }
         }
-        
-        .service-header {
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(255, 107, 53, 0.6);
+            }
+        }
+
+        .offer-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.25), 
+                transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .offer-text {
+            position: relative;
+            z-index: 2;
             display: flex;
             align-items: center;
-            padding: 15px;
-            background: rgba(93, 57, 84, 0.05);
+            justify-content: center;
+            gap: 20px;
         }
-        
-        .flag {
-            width: 45px;
-            height: 28px;
-            margin-left: 5px;
-            border-radius: 4px;
-            box-shadow: none;
-        }.service-title {
-    font-size: 1.5rem;
-    margin-right: 10px; /* تضيف مسافة بين العلم والكلمة */
+
+        .offer-icon {
+            font-size: 1.8rem;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .offer-discount {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            border: 3px dashed white;
+            font-weight: 800;
+            font-size: 1.8rem;
+            margin: 0 15px;
+            animation: discountPulse 1.5s infinite alternate;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes discountPulse {
+            0% {
+                transform: scale(1);
+                border-color: white;
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                transform: scale(1.1);
+                border-color: #ffeb3b;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .offer-bar .close-offer {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .offer-bar .close-offer:hover {
+            color: #ffeb3b;
+            transform: translateY(-50%) scale(1.2);
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* قسم الخدمات المميزة */
+        .featured-services {
+            background: var(--gradient-bg);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .featured-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            pointer-events: none;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title .main-word {
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title .main-word::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--logo-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .country-item {
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .country-circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background: var(--logo-gradient) border-box;
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: var(--box-shadow);
+        }
+
+        .country-circle::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--logo-gradient);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .country-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .country-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .country-item:hover .country-circle {
+            transform: scale(1.1) translateY(-10px);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .country-item:hover .country-circle::before {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .country-item:hover .country-circle img {
+            transform: scale(1.05);
+        }
+
+        .country-item:hover .country-name {
+            color: var(--logo-orange);
+        }
+
+        /* قسم من نحن */
+        .about {
+    background: var(--gradient-bg);
+    position: relative;
+    padding: 80px 0;
 }
 
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="waves" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23ffffff" stroke-width="0.5" fill="none" opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23waves)"/></svg>');
+    pointer-events: none;
+}
+
+.about-content {
+    display: flex;
+    color: var(--text-color);
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-text {
+    flex: 1;
+    color: var(--text-color);
+    padding: 30px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--box-shadow);
+}
+
+.about-text h3 {
+    font-size: 2.2rem;
+    background: var(--logo-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+    position: relative; /* عشان الـ after يتموضع صح */
+    padding-bottom: 15px;
+    font-weight: 800;
+}
+
+.about-text h3:after {
+    content: "";
+    position: absolute; /* ← اتعدلت */
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--logo-gradient);
+    border-radius: 2px;
+}
+
+.about-text h4 {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin: 30px 0 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.about-text ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-right: 30px; /* عشان RTL */
+}
+
+.about-text ul li i {
+    color: #FF6B35;
+    margin-left: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease; /* خليتها نسخة واحدة */
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .image-overlay h4 {
+            color: #FF6B35;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
+        }
+
+        /* قسم أماكن توجدنا */
+        .locations-section {
+            background: var(--gradient-bg);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .locations-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            pointer-events: none;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .location-item {
+            background: var(--gradient-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .location-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+            background: var(--gradient-hover);
+        }
+
+        .location-icon {
+            font-size: 40px;
+            color: var(--logo-orange);
+            margin-bottom: 20px;
+        }
+
+        .location-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .location-description {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* قسم الخدمات القوية - نفس استايل قسم الخدمات المميزة */
+        .strong-services {
+            background: var(--gradient-bg);
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .strong-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            pointer-events: none;
+        }
+
+        .partner-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--logo-orange), #ff6b35);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .partner-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff6b35, var(--logo-orange));
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .partner-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .partner-btn:hover::before {
+            opacity: 1;
+        }
+
+        /* زر إرسال الطلب الجديد */
+        .submit-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #45a049, #4CAF50);
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .submit-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(76, 175, 80, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover::before {
+            opacity: 1;
+        }
+
+        .submit-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+
+        .submit-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        /* قسم الاتصال */
+        .contact {
+            padding: 80px 0;
+            background: var(--gradient-bg);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            background: var(--gradient-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--box-shadow);
+            background: var(--gradient-hover);
+        }
+
+        .contact-icon {
+            font-size: 40px;
+            color: var(--logo-orange);
+            margin-bottom: 20px;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .contact-info {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover {
+            color: var(--logo-orange);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: var(--text-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--logo-gradient);
+            border-radius: 2px;
+        }
+
+        .footer-about p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-left: 10px;
+            color: var(--logo-orange);
+        }
+
+        .footer-links a:hover {
+            color: var(--logo-orange);
+            transform: translateX(-5px);
+        }
+
+        .footer-contact li {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: flex-start;
+            font-size: 1rem;
+        }
+
+        .footer-contact li i {
+            color: var(--logo-orange);
+            margin-left: 15px;
+            margin-top: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--logo-orange);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* زر واتساب العائم */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: var(--dark-color);
+            border-radius: var(--border-radius-lg);
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: var(--box-shadow-lg);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: var(--logo-orange);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .modal-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .modal-body {
+            margin-bottom: 30px;
+        }
+
+        .service-info {
+            margin-bottom: 30px;
+        }
+
+        .service-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--logo-orange);
+        }
+
+        .service-info ul {
+            list-style: none;
+        }
+
+        .service-info ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-info ul li i {
+            color: var(--logo-orange);
+            margin-left: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            color: var(--text-color);
+            font-family: 'Cairo', sans-serif;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--logo-orange);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: var(--text-muted);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23888' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            padding-left: 40px;
+        }
+
+        .form-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .form-alert {
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .form-alert.alert-info {
+            background-color: rgba(0, 123, 255, 0.2);
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            color: #8bb9ff;
+        }
+
+        .form-alert.alert-warning {
+            background-color: rgba(255, 193, 7, 0.2);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            color: #ffd970;
+        }
+
+        /* Multi-select styles */
+        .multiselect-container {
+            position: relative;
+        }
+
+        .multiselect-selected {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 8px;
+            min-height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+        }
+
+        .multiselect-tag {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--logo-orange);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+
+        .multiselect-tag-remove {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .multiselect-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            background-color: var(--dark-color);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            z-index: 10;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .multiselect-dropdown.show {
+            display: block;
+        }
+
+        .multiselect-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .multiselect-option:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .multiselect-option.selected {
+            background-color: rgba(255, 165, 0, 0.2);
+        }
+
+        /* Inactive country message */
+        .country-inactive-message {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+        }
+
+        .country-inactive-message i {
+            font-size: 50px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .country-inactive-message h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Price tag styles */
+        .price-tag {
+            background-color: var(--logo-orange);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 10px;
+            display: inline-block;
+        }
         
         .service-price {
-            color: #FF6B35;
+            background: var(--logo-gradient);
+            color: white;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
             font-weight: 700;
-            font-size: 1.3rem;
-            margin: 8px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            display: inline-block;
+        }
+        
+        .price-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid var(--logo-orange);
+        }
+        
+        .price-section h4 {
+            color: var(--logo-orange);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .service-option {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-option h5 {
+            color: var(--text-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
         
         .service-details {
-            padding: 15px;
-            border-top: 1px solid #fc0d0d;
-        }
-        
-        .service-details ul {
-            list-style: none;
-            margin-bottom: 15px;
-        }
-        
-        .service-details li {
-            margin-bottom: 7px;
             display: flex;
-            align-items: flex-start;
-            font-size: 0.95rem;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
         }
         
-        .service-details li:before {
-            content: "✓";
-            color: var(--secondary-color);
-            margin-left: 8px;
-            font-weight: bold;
+        .service-requirements {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
         
-        .service-note {
-            background: rgba(93, 57, 84, 0.1);
-            padding: 8px;
+        /* قسم عرض السعر بعد الاختيار */
+        .selected-price-container {
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.1), rgba(230, 57, 70, 0.1));
             border-radius: var(--border-radius);
-            font-size: 0.85rem;
-            margin-top: 12px;
-        }
-        
-        .service-btn {
-            width: 100%;
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 10px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: var(--border-radius);
-            margin-top: 12px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .service-btn:hover {
-            background: var(--logo-gradient);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-        }
-        
-        /* قسم من نحن */
-        .about {
-            background: #0f0f0f;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            display: none;
+            animation: fadeIn 0.5s ease;
         }
 
-        .about-content {
-            display: flex;
-            color: #fdfcf0;
-            align-items: center;
-            gap: 30px;
-        }
-        
-        .about-text {
-            flex: 1;
-            color: #fffbf4;
-        }
-        
-        .about-text p {
-            margin-bottom: 15px;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        
-        .about-image {
-            flex: 1;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--box-shadow);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
+        .selected-price-container.active {
             display: block;
         }
-        
-        .contact-info {
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
 
-.contact-info {
-    margin-top: 25px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+        .selected-price-title {
+            color: var(--logo-orange);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* توسيط أفقي */
-    background: linear-gradient(135deg, #ffffff, rgba(250, 124, 20, 0.8));
-    color: #000; /* لون الخط أسود */
-    padding: 12px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    flex: 1;
-    min-width: 200px;
-    transition: 0.3s ease;
-    position: relative;
-    font-weight: 700; /* خط تقيل */
-    text-align: center; /* توسيط النص */
-}
+        .selected-price-title i {
+            font-size: 1.5rem;
+        }
 
-/* تأثير النيون عند مرور الماوس */
-.contact-item:hover {
-    box-shadow: 0 0 15px 4px rgba(250, 124, 20, 0.9), var(--box-shadow);
-    transform: scale(1.02);
-    z-index: 2;
-}
-
-
-
-        
-        .contact-icon {
-            background: var(--primary-color);
+        .selected-price-value {
+            background: var(--logo-gradient);
             color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: 12px;
-            font-size: 1.1rem;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 10px 0;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
-        
-        /* قسم الأسئلة الشائعة */
-      .faq {
-    background-color: #0f0f0f;
-}
 
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    margin-bottom: 12px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    background: linear-gradient(135deg, rgba(250, 124, 20, 0.8), #1a1a1a);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* تأثير إضاءة عند مرور الماوس */
-.faq-item:hover {
-    box-shadow: 0 0 20px 6px rgba(250, 123, 20, 0.438), var(--box-shadow);
-    transform: scale(1.01);
-    z-index: 2;
-}
-
-.faq-question {
-    background: transparent; /* شفافة علشان نعرض الخلفية المدمجة للكارت */
-    color: #ffffff; /* لون النص والأيقونة */
-    padding: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1rem;
-    position: relative;
-     box-shadow: 0 0 20px 5px rgba(250, 124, 20, 0.9), var(--box-shadow);
-}
-
-/* الكلمة الرئيسية برتقالي */
-.faq-question span {
-    color: #FA7C14;
-}
-
-.faq-question:after {
-    content: "+";
-    font-size: 1.3rem;
-    color: #ffffff;
-}
-
-.faq-item.active .faq-question:after {
-    content: "-";
-}
-
-.faq-answer {
-    padding: 0 15px;
-    max-height: 0;
-    overflow: hidden;
-    transition: var(--transition);
-    font-size: 0.95rem;
-    background: #ffffff; /* خلفية بيضاء */
-    color: #0f0f0f; /* نص برتقالي */
-}
-
-.faq-item.active .faq-answer {
-    padding: 15px;
-    max-height: 500px;
-}
-
-        
-        /* قسم آراء العملاء */
-        .testimonials {
-            background: #0f0f0f;
-        }
-        
-       .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 25px;
-}
-
-.testimonial-card {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 25px;
-    box-shadow: var(--box-shadow);
-    position: relative;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-/* تأثير عند مرور الماوس */
-.testimonial-card:hover {
-    box-shadow: 0 0 15px 4px rgba(250, 124, 20, 0.5), var(--box-shadow); /* توهج برتقالي ناعم */
-    transform: scale(1.02); /* تكبير بسيط */
-    z-index: 2;
-}
-
-.testimonial-card:before {
-    content: "“";
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 4rem;
-    color: rgba(93, 57, 84, 0.1);
-    font-family: Georgia, serif;
-    line-height: 1;
-}
-
-        
-        .rating {
-            color: var(--secondary-color);
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-        
-        .testimonial-text {
-            margin-bottom: 15px;
-            font-style: italic;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-        
-        /* تذييل الصفحة */
-        footer {
-            background: #0f0f0f;
-            color: rgb(252, 255, 227);
-            padding: 30px 0 15px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 25px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            min-width: 220px;
-        }
-        
-        .footer-column h3 {
-            color: #ff9027d5;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        
-        .footer-column ul {
-            list-style-type: none;
-            
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-        
-        .footer-column ul li a {
-            color: rgba(248, 248, 218, 0.8);
-            transition: var(--transition);
-        }
-        
-        .footer-column ul li a:hover {
-            color: rgb(226, 131, 6);
-            padding-right: 5px;
-        }
-        
-        .social-icons {
-            display: flex ;
-            gap: 12px;
-            margin-top: 15px;
-        }
-        
-        .social-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgb(248, 242, 207);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
+        .selected-service-details {
+            color: var(--text-secondary);
             font-size: 1rem;
-        }
-        
-        .social-icon:hover {
-            background: #e27c07;
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 15px;
-            border-top: 1px solid rgba(238, 131, 9, 0.514);
-            font-size: 0.85rem;
-            color: rgb(241, 122, 10);
-        }
-        
-        /* زر الواتساب العائم */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            left: 25px;
-            width: 55px;
-            height: 55px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            z-index: 100;
-            transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-        
-        /* قسم التطوير */
-        .development {
-            background: linear-gradient(to bottom, #0f0f0f, #0f0f0f);
-        }
-        
-        .dev-icon {
-            width: 45px;
-            height: 28px;
-            margin-left: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-top: 10px;
         }
 
-        /* التصميم المتجاوب */
-        @media (max-width: 992px) {
-            .container {
-                padding: 0 10px;
+        .selected-service-requirements {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-top: 15px;
+            border-right: 3px solid var(--logo-orange);
+        }
+
+        .selected-service-requirements h5 {
+            color: var(--text-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .selected-service-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .selected-service-requirements li {
+            margin-bottom: 8px;
+            padding-right: 20px;
+            position: relative;
+        }
+
+        .selected-service-requirements li:before {
+            content: "•";
+            color: var(--logo-orange);
+            position: absolute;
+            right: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
             }
             
+            .countries-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .nav-links {
+                margin-right: 0;
+            }
+            
+            .nav-links li {
+                margin: 0 15px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                padding: 8px 15px;
+            }
+
+            .navbar-container {
+                padding: 0;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                order: 2;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(33, 27, 27, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                z-index: 999;
+                padding: 60px 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 24px;
+                color: var(--text-color);
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .offer-bar {
+                font-size: 1.1rem;
+                padding: 15px 0;
+            }
+
+            .offer-discount {
+                font-size: 1.5rem;
+                padding: 6px 15px;
+            }
+
             .about-content {
+                flex-direction: column;
+            }
+
+            .about-text, .about-image {
+                flex: none;
+                width: 100%;
+            }
+
+            .about-image {
+                margin-top: 30px;
+                order: 2;
+            }
+
+            .about-text {
+                order: 1;
+            }
+
+            .footer-content {
                 flex-direction: column;
                 gap: 30px;
             }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                padding: 10px 18px;
-            }
-            
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+            .footer-column {
+                width: 100%;
             }
         }
 
         @media (max-width: 768px) {
-            .navbar-container {
-                padding: 10px;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                width: 80%;
-                height: calc(100vh - 70px);
-                background: #1f1b1b;
-                flex-direction: column;
-                padding: 20px 0;
-                transition: all 0.4s ease;
-                z-index: 999;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
-            .nav-links.active {
-                right: 0;
+            .section-title h2 {
+                font-size: 2rem;
             }
             
-            .nav-links li {
-                margin: 0;
-                width: 100%;
+            .countries-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
             
-            .nav-links a {
-                display: block;
-                padding: 12px 20px;
-                font-size: 1.1rem;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
+            .country-circle {
+                width: 110px;
+                height: 110px;
             }
             
-            .nav-links a:after {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .logo-text {
-                font-size: 1.6rem;
-            }
-            
-            .hero {
-                min-height: 500px;
-                padding-top: 70px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-                padding: 10px 15px;
-                white-space: normal;
-            }
-            
-            .btn {
-                padding: 9px 20px;
-                font-size: 0.95rem;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
-                margin-bottom: 30px;
-            }
-            
-            .services-grid,
             .testimonials-grid {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -945,31 +1563,76 @@
             .contact-item {
                 min-width: 100%;
             }
+            
+            .partner-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .offer-text {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .offer-bar .close-offer {
+                left: 10px;
+            }
+    
+
+        @media (max-width: 768px) {
+            .nav-links {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 1.5rem;
+            .navbar {
+                padding: 5px 10px;
             }
             
-            .hero p {
-                font-size: 0.95rem;
-                margin-bottom: 25px;
+            .logo-icon {
+                width: 40px;
+                height: 35px;
             }
             
-            .section-title {
-                font-size: 1.3rem;
+            .hero-title {
+                font-size: 2rem;
             }
             
-            .btn {
-                display: block;
-                width: 100%;
-                margin: 8px auto;
-                max-width: 280px;
+            .hero-subtitle {
+                font-size: 1rem;
             }
             
-            .service-card {
-                padding: 0;
+            .hero-btn {
+                padding: 10px 25px;
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title p {
+                font-size: 1rem;
+            }
+            
+            .countries-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .country-circle {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .country-name {
+                font-size: 1rem;
             }
             
             .about-image {
@@ -983,327 +1646,134 @@
                 bottom: 20px;
                 left: 20px;
             }
+            
+            .submit-btn {
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+            
+            .offer-bar {
+                font-size: 0.9rem;
+                padding: 12px 0;
+            }
+            
+            .offer-discount {
+                font-size: 1.2rem;
+                padding: 4px 10px;
+            }
         }
     </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
     
-    <!-- شريط التنقل -->
-    <nav class="navbar">
+    <!-- شريط التنقل - تم تعديله ليكون أصغر حجماً -->
+    <nav class="navbar" id="navbar">
         <div class="navbar-container container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="f.png" alt="بصمة لوجو" class="logo-image">
+                    <img src="icon/b.png" alt="بصمة" class="logo-image">
                 </div>
-                <div class="logo-text">بصمة</div>
             </div>
+            
             <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
+            
             <ul class="nav-links">
                 <li><a href="#home">الرئيسية</a></li>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#development">الاوراق</a></li>
+                <li><a href="#featured-services">الخدمات</a></li>
                 <li><a href="#about">من نحن</a></li>
-                <li><a href="#faq">الأسئلة الشائعة</a></li>
-                <li><a href="#testimonials">آراء العملاء</a></li>
-                <a href="tel:01018516175" title="اتصل الآن" class="call-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-    <path fill="#f5f5dc" d="M511.1 387.6c-1.1-7-5.8-13-12.1-15.7l-104-44.5c-6.5-2.8-13.9-2.1-19.8 1.8l-52.5 34.4c-45.4-23.8-82.3-60.8-106-106.2l34.3-52.3c3.9-6 4.6-13.4 1.8-19.8l-44.5-104c-2.7-6.3-8.6-11-15.7-12.1-7.1-1.1-14.2.7-19.6 4.9l-65.6 52.5c-5.2 4.2-8.3 10.6-8.3 17.4 0 189.8 154.2 344 344 344 6.7 0 13.1-3 17.4-8.3l52.5-65.6c4.1-5.4 6-12.5 4.9-19.6z"/>
-  </svg>
-
-
-</a>
-
-</a>
+                <li><a href="#contracts">عقود العمل</a></li>
+                <li><a href="#strong-services">الخدمات القوية</a></li>
+                <li><a href="#locations">أماكن توجدنا</a></li>
+                <li><a href="#partners">كن شريكا لنا</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
             </ul>
         </div>
     </nav>
     
     <!-- القسم الرئيسي -->
     <section class="hero" id="home">
+        <!-- صورة الهيدر -->
+        <img src="icon/basmh.png" alt="بصمة - خدمات التأشيرات" class="hero-image">
+        
         <div class="hero-content">
-            <h1>احجز تأشيرتك بخطوة واحدة… وسافر بدون صداع ورق!</h1>
-            <p>مع بصمة أنت في أيد أمينة... ثقتك فينا هي أكبر مسئولية علينا.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn btn-primary">شوف الخدمات</a>
-                <a href="https://wa.me/201018516175" target="_blank" class="btn btn-outline">اطلب تأشيرتك الآن</a>
-            </div>
+            <h1 class="hero-title">Ba<span style="color: #cc5008;">S</span>mh</h1>
+            <div class="hero-subtitle" id="typewriter"></div>
+            <a href="#featured-services" class="hero-btn">شوف الخدمات</a>
         </div>
     </section>
     
-    <!-- قسم الخدمات -->
-    <section class="services" id="services">
+    <!-- شريط العروض تحت الهيدر مباشرة - مرفوع للأعلى -->
+    <div class="offer-bar" id="offer-bar">
+        <button class="close-offer" onclick="closeOfferBar()">×</button>
+        <div class="offer-text">
+            <span class="offer-icon">🎉</span>
+            احصل على خصم 
+            <span class="offer-discount">20%</span>
+            على تذكرة الطيران للي يقدم على تأشيرة معنا
+            <span class="offer-icon">🎉</span>
+        </div>
+    </div>
+
+    <!-- قسم الخدمات المميزة - الدول (الأول) -->
+    <section class="featured-services" id="featured-services">
         <div class="container">
             <div class="section-title">
                 <h2><span class="main-word">خدماتنا المميزة</span></h2>
+                <p>اختر الدولة التي ترغب في السفر إليها</p>
             </div>
             
-            <div class="services-grid">
-                <!-- بطاقة خدمة السعودية -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <img class="flag" src="https://flagcdn.com/48x36/sa.png"
-  srcset="https://flagcdn.com/96x72/sa.png 2x,
-    https://flagcdn.com/144x108/sa.png 3x"
-  width="48"
-  height="36"
-  alt="Saudi Arabia">
-                        <h3 class="service-title">السعودية 🇸🇦</h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li>تأشيرة حرة 3 شهور</li>
-                            <li>تأشيرة 15 شهر</li>
-                            <li>نقل كفالة على مؤسسة فردية</li>
-                            <li>تفويض تأشيرة</li>
-                            <li>عقد اجازة</li>
-                      </ul>
-                        <div class="service-note">
-                            ✅ ملاحظة: هذه التاشيره بدون عمل
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة السعودية')">اعرف التفاصيل</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة الإمارات -->
-                <div class="service-card">
-                    <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/ae.png"
-            srcset="https://flagcdn.com/96x72/ae.png 2x, https://flagcdn.com/144x108/ae.png 3x"
-            width="48"
-            height="36"
-            alt="United Arab Emirates"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">الإمارات 🇦🇪</h3>
-</div>
-
-                    <div class="service-details">
-                        <ul>
-                            <li>تأشيرات زيارة VIP (14 يوم - شهر - شهرين)</li>
-                            <li>مهن عليا</li>
-                            <li> تاشيرة مهن ضعيفه</li>
-                            <li> اقامة سنتين </li>
-                        </ul>
-                        <div class="service-info">
-                            <p><strong>مدة الإصدار:</strong> 1 - 5 أيام</p>
-                        </div>
-                        <div class="service-note">
-                            ✅ ملاحظة: هذه التاشيره بدون عمل
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة الإمارات')">اعرف التفاصيل</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة عُمان -->
-                <div class="service-card">
-                    <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/om.png"
-            srcset="https://flagcdn.com/96x72/om.png 2x, https://flagcdn.com/144x108/om.png 3x"
-            width="48"
-            height="36"
-            alt="Oman"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">عُمان 🇴🇲</h3>
-</div>
-
-                    <div class="service-details">
-                        <ul>
-                            <li>تأشيرة شهر,10 ايام</li>
-                            <li>تنفيذ 4 ايام</li>
-                            <li>قابلة للتجديد</li>
-                            <li>تاشيره لجميع الجنسيات</li>
-                            <li> سهولة في الاجراءت</li>
-                        </ul>
-                        <div class="service-note">
-                            ✅ ملاحظة: هذه التاشيره بدون عمل
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة عُمان')">اعرف التفاصيل</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة البحرين -->
-                <div class="service-card">
-                    <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/bh.png"
-            srcset="https://flagcdn.com/96x72/bh.png 2x, https://flagcdn.com/144x108/bh.png 3x"
-            width="48"
-            height="36"
-            alt="Bahrain"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">البحرين 🇧🇭</h3>
-</div>
-                    <div class="service-details">
-                        <ul>
-                            <li>تاشيره اسبوعين</li>
-                            <li>تاشيره 3 شهور</li>
-                            <li>تاشيره سنة</li>
-                        </ul>
-                        <div class="service-note">
-                             ✅ ملاحظة: هذه التاشيره بدون عمل
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة البحرين')">اعرف التفاصيل</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة قطر -->
-                <div class="service-card">
-                   <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/qa.png"
-            srcset="https://flagcdn.com/96x72/qa.png 2x, https://flagcdn.com/144x108/qa.png 3x"
-            width="48"
-            height="36"
-            alt="Qatar"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">قطر 🇶🇦</h3>
-</div>
-
-                    <div class="service-details">
-                        <ul>
-                            <li>تاشيره شهر </li>
-                            <li>تنفيذ 4 ايام</li>
-                            <li>قابلة للتجديد</li>
-                        </ul>
-                        <div class="service-note">
-                               ✅ ملاحظة: هذه التاشيره بدون عمل
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة قطر')">اعرف التفاصيل</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة خدمة تركيا -->
-                <div class="service-card">
-                    <div class="service-header">
-    <div class="flag">
-        <img 
-            src="https://flagcdn.com/48x36/tr.png"
-            srcset="https://flagcdn.com/96x72/tr.png 2x, https://flagcdn.com/144x108/tr.png 3x"
-            width="48"
-            height="36"
-            alt="Turkey"
-            style="border-radius: 5px;"
-        >
-    </div>
-    <h3 class="service-title">تركيا 🇹🇷</h3>
-</div>
-
-                    <div class="service-details">
-                        <ul>
-                            <li>شهر </li>
-                            <li>السن من 45:65</li>
-                            <li> تنفيذ في اسبوع</li>
-                        </ul>
-                        <div class="service-note">
-                              ✅ ملاحظة: هذه التاشيره بدون عمل
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة تركيا')">اعرف التفاصيل</button>
-                    </div>
-                </div>
+            <div class="countries-grid" id="countries-grid">
+                <!-- سيتم إنشاء بطاقات الدول ديناميكياً -->
             </div>
         </div>
     </section>
-    
-    <!-- قسم التطوير والبرمجة -->
-    <section class="development" id="development">
+
+    <!-- قسم العقود -->
+    <section class="featured-services" id="contracts">
         <div class="container">
             <div class="section-title">
-                <h2><span class="main-word">خدمات الاوراق</span></h2>
+                <h2><span class="main-word">عقود العمل</span></h2>
+                <p>نوفر عقود عمل لمختلف المهن في عدة دول</p>
             </div>
             
-            <div class="services-grid">
-                <!-- بطاقة تطوير المواقع -->
-                <div class="service-card">
-                    <div class="service-header">
-                       <div class="dev-icon">
-    <i class="fas fa-id-badge" style="color: var(--logo-orange); font-size: 1.8rem;"></i>
-</div>
+            <div class="countries-grid" id="contracts-grid">
+                <!-- سيتم إنشاء بطاقات عقود العمل ديناميكياً -->
+            </div>
+        </div>
+    </section>
 
-                        <h3 class="service-title"> تغير المهنة</h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li> تغير جميع المهن الغير حكوميه</li>
-                            <li>متاحه للسيدات </li>
-                            <li>(مندوب مبيعات,مبرمج,عامة تعبئة,..) </li>
-                            <li>برنت تامينات</li>
-                            <li>اورق قانوني  </li>
-                          
-                        </ul>
-                        <div class="service-note">
-                         🎏  التنفيذ خلال 3 ايام
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة تغير المهنة')">اطلب الآن</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة تطبيقات الجوال -->
-                <div class="service-card">
-                    <div class="service-header">
-                       <div class="dev-icon">
-    <i class="fas fa-passport" style="color: var(--logo-red); font-size: 1.8rem;"></i>
-</div>
+    <!-- قسم الخدمات القوية -->
+    <section class="strong-services" id="strong-services">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="main-word">الخدمات القوية</span></h2>
+                <p>تأشيرات للدول الكبرى بمتطلبات خاصة</p>
+            </div>
+            
+            <div class="countries-grid" id="strong-countries-grid">
+                <!-- سيتم إنشاء بطاقات الدول القوية ديناميكياً -->
+            </div>
+        </div>
+    </section>
 
-                        <h3 class="service-title"> تجهيز ملف شنغن</h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li>نموذج طلب التأشيرة</li>
-                            <li> متاح جميع دول شنغن</li>
-                            <li> ترجمة الملفات</li>
-                            <li> حجز موعد</li>
-                            <li> تجهز الاوراق </li>
-                        </ul>
-                        <div class="service-note">
-                            🎏  هذه الخدمة تتم مع منصة AselPro
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة  التقديم لدولة ')">اطلب الآن</button>
-                    </div>
-                </div>
-                
-                <!-- بطاقة الاستشارات التقنية -->
-                <div class="service-card">
-                    <div class="service-header">
-                        <div class="dev-icon">
-                            <i class="fas fa-lightbulb" style="color: var(--secondary-color); font-size: 1.8rem;"></i>
-                        </div>
-                        <h3 class="service-title">الاستشارات  </h3>
-                    </div>
-                    <div class="service-details">
-                        <ul>
-                            <li>مساعدتك في اختيار التأشيرة المناسبة</li>
-                          <li>توضيح الأوراق المطلوبة حسب كل دولة</li>
-                         <li>مراجعة بياناتك قبل التقديم</li>
-                           <li>متابعة طلبك بدقة</li>
-                           <li>
-الرد على جميع استفساراتك بدقة واهتمام</li>
-                        </ul>
-                        <div class="service-note">
-                            🎏 هذة الخدمه مجانية
-                        </div>
-                        <button class="service-btn" onclick="openWhatsApp('خدمة الاستشارات ')">اطلب الآن</button>
-                    </div>
-                </div>
+    <!-- قسم الدول الاخري -->
+    <section class="featured-services" id="european-countries">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="main-word">الدول الاخري</span></h2>
+                <p>اختر الدولة التي ترغب في السفر إليها</p>
+            </div>
+            
+            <div class="countries-grid" id="other-countries-grid">
+                <!-- سيتم إنشاء بطاقات الدول الأخرى ديناميكياً -->
             </div>
         </div>
     </section>
     
-    <!-- قسم من نحن -->
+    <!-- قسم من نحن (بعد الدول) -->
     <section class="about" id="about">
         <div class="container">
             <div class="section-title">
@@ -1312,272 +1782,1668 @@
             
             <div class="about-content">
                 <div class="about-text">
-                    <p>في بصمة، إحنا بوابتك الآمنة لعالم السفر!</p>
-                    <p>دورنا هو توصيلك بأفضل مكاتب السفر المرخصة والمعتمدة رسميًا من السفارات، علشان نضمنلك خدمة موثوقة وإجراءات سليمة من البداية للنهاية.</p>
-                    <p>بنهتم بكل التفاصيل، وبنتعامل بس مع شركاء مضمونين ومسجلين قانونيًا، علشان تكون رحلتك على أعلى مستوى من الاحترافية والاطمئنان.</p>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h3>اتصل بنا</h3>
-                                <p>01018516175</p>
-                                <p>01143788283</p>
-                                <p>01099574077</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>بصمة: بوابتك الآمنة لعالم السفر</h3>
+                    <p>نحن في بصمة نقدم حلولاً متكاملة لخدمات التأشيرات والسفر، معتمدين على شبكة واسعة من العلاقات مع المكاتب المرخصة والمعتمدة من السفارات حول العالم.</p>
+                    
+                    
+                    <h4>قيمنا</h4>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> المصداقية والشفافية</li>
+                        <li><i class="fas fa-check-circle"></i> الاحترافية والخبرة</li>
+                        <li><i class="fas fa-check-circle"></i> الالتزام بالمواعيد</li>
+                        <li><i class="fas fa-check-circle"></i> خدمة العملاء المتميزة</li>
+                        <li><i class="fas fa-check-circle"></i> الحلول المبتكرة</li>
+                    </ul>
+                    
+                 
                 </div>
                 
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="فريق بصمة">
+                    <img src="icon/abaut.png" alt="فريق بصمة">
+                    <div class="image-overlay">
+                        <h4>فريق مؤسسة البدري المحترف</h4>
+                        <p>خبراء في مجال السفر والتأشيرات</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- قسم الأسئلة الشائعة -->
-    <section class="faq" id="faq">
+
+    <!-- قسم أماكن توجدنا -->
+    <section class="locations-section" id="locations">
         <div class="container">
             <div class="section-title">
-                <h2><span class="main-word">الأسئلة المتكررة</span></h2>
+                <h2><span class="main-word">أماكن توجدنا</span></h2>
+                <p>نتواجد في عدة دول لتقديم خدمة أفضل لعملائنا</p>
             </div>
             
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">هل الأسعار دي شاملة حجز الطيران والفندق </div>
-                    <div class="faq-answer">
-                        <p>لا,الاسعار تشمل سعر التاشيره فقط</p>
+            <div class="locations-grid">
+                <div class="location-item">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
+                    <h3 class="location-name">مصر</h3>
+                    <p class="location-description">المقر الرئيسي - القاهرة</p>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">ما هي طرق الدفع ,والعملة؟</div>
-                    <div class="faq-answer">
-                        <p>متاح الدفع بجميع الطرق المحلية،والعالميه  بجميع عملات العالم.</p>
+                <div class="location-item">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
+                    <h3 class="location-name">الأردن</h3>
+                    <p class="location-description">فرع عمان - خدمة الشرق الأوسط</p>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">إزاي أقدّم على الخدمة؟</div>
-                    <div class="faq-answer">
-                        <p>كل خدمة يوجد بجانبها زر "اطلب الآن" سينقلك مباشرة إلى الدردشة على واتساب مع فريق خدمة العملاء.</p>
+                <div class="location-item">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
+                    <h3 class="location-name">انفاغستان</h3>
+                    <p class="location-description">خدمات آسيا الوسطى</p>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">هل في تقسيط للدفع؟</div>
-                    <div class="faq-answer">
-                        <p>حاليًا لا نوفر خدمة التقسيط، ولكن قريبًا سنوفر طرق سداد مرنة تناسب جميع العملاء.</p>
+                <div class="location-item">
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
+                    <h3 class="location-name">انجلترا</h3>
+                    <p class="location-description">فرع لندن - خدمة أوروبا</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- قسم آراء العملاء -->
-    <section class="testimonials" id="testimonials">
+    <!-- قسم كن شريكا لنا -->
+    <section class="featured-services" id="partners">
         <div class="container">
             <div class="section-title">
-                <h2><span class="main-word">آراء عملائنا</span></h2>
+                <h2><span class="main-word">كن شريكا لنا</span></h2>
+                <p>انضم إلى شبكة موزعينا المعتمدين واحصل على مميزات حصرية</p>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"أسرع مكتب قدمت معاه تأشيرة، شكراً بصمة ❤️. تعامل محترف وخدمة ممتازة، استلمت تأشيرتي خلال 48 ساعة فقط!"</p>
-                    <div class="client-info">
-                        <p class="client-name">ا.سمر البدري</p>
-                    </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>لماذا تصبح موزعًا معتمدًا لـ بصمة؟</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> عمولات تنافسية على كل معاملة</li>
+                        <li><i class="fas fa-check-circle"></i> دعم فني وإداري كامل</li>
+                        <li><i class="fas fa-check-circle"></i> مواد تسويقية مجانية</li>
+                        <li><i class="fas fa-check-circle"></i> تدريب متخصص على المنتجات والخدمات</li>
+                        <li><i class="fas fa-check-circle"></i> متابعة مستمرة للأداء</li>
+                    </ul>
+                    <button id="distributor-btn" class="partner-btn">طلب لوحة موزع</button>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"سافرت للإمارات في أقل من 3 أيام! ما كنت أتوقع إن الموضوع يكون سهل وسريع كده. شكراً لكم على المجهود الرائع."</p>
-                    <div class="client-info">
-                        <p class="client-name">يوسف عيد</p>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"خدمة ممتازة وسريعة، فريق العمل متعاون ومتابعة رائعة. أسعارهم مناسبة وجودة الخدمة ممتازة. أنصح الجميع بالتعامل مع بصمة."</p>
-                    <div class="client-info">
-                        <p class="client-name">محمود رمضان</p>
+                <div class="about-image">
+                    <img src="icon/356.gif" alt="شركاء بصمة">
+                    <div class="image-overlay">
+                        <h4>شبكة موزعينا المعتمدين</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- تذييل الصفحة -->
-    <footer id="contact">
+    <!-- قسم الاتصال -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2><span class="main-word">اتصل بنا</span></h2>
+                <p>نحن هنا للإجابة على جميع استفساراتك</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">واتساب وفون</h3>
+                    <div class="contact-info">
+                        <a href="https://wa.me/201018516175" target="_blank">01018516175</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">واتساب وفون</h3>
+                    <div class="contact-info">
+                        <a href="https://wa.me/201099547974" target="_blank">01099547974</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="contact-title">فون خارج مصر</h3>
+                    <div class="contact-info">
+                        +1 (707) 998 8411
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">البريد الإلكتروني</h3>
+                    <div class="contact-info">
+                        <a href="mailto:info@basmh.online">info@basmh.online</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="contact-title">الموقع الإلكتروني</h3>
+                    <div class="contact-info">
+                        <a href="https://www.basmh.online" target="_blank">www.basmh.online</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="contact-title">للتجار والمناديب</h3>
+                    <div class="contact-info">
+                        <a href="https://www.elbadry.pro" target="_blank">www.elbadry.pro</a><br>
+                        <a href="mailto:yousef@elbadry.pro">yousef@elbadry.pro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>عن بصمة</h3>
-<p>نسعى لتقديم خدمات تأشيرات موثوقة باحترافية واهتمام بكل التفاصيل.
-بصمتك... أمانة.</p>                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <div class="footer-column footer-about">
+                    <h3>بصمة</h3>
+                    <p>نقدم خدمات التأشيرات والإقامات لمختلف الدول بطريقة سهلة وسريعة وموثوقة.</p>
+                    <div class="footer-social">
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/201018516175" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>روابط سريعة</h3>
-                    <ul>
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#services">تغير مهنة</a></li>
-                        <li><a href="#development">نقل كفالة</a></li>
-                        <li><a href="#about">تفويض </a></li>
-                        <li><a href="#faq">السعودية</a></li>
-                        <li><a href="#testimonials">الامارات</a></li>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-angle-left"></i> الرئيسية</a></li>
+                        <li><a href="#featured-services"><i class="fas fa-angle-left"></i> الخدمات</a></li>
+                        <li><a href="#about"><i class="fas fa-angle-left"></i> من نحن</a></li>
+                        <li><a href="#contracts"><i class="fas fa-angle-left"></i> عقود العمل</a></li>
+                        <li><a href="#strong-services"><i class="fas fa-angle-left"></i> الخدمات القوية</a></li>
+                        <li><a href="#locations"><i class="fas fa-angle-left"></i> أماكن توجدنا</a></li>
+                        <li><a href="#partners"><i class="fas fa-angle-left"></i> كن شريكا لنا</a></li>
+                        <li><a href="#contact"><i class="fas fa-angle-left"></i> اتصل بنا</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3>تواصل معنا</h3>
-                    <ul>
-                        <li><i class="fas fa-phone"></i> 01018516175</li>
-                        <li><i class="fas fa-phone"></i> 01143788283</li>
-                        <li><i class="fas fa-phone"></i> 01099574077</li>
-                        <li><i class="fas fa-envelope"></i> visa@basmh.online</li>
-                        <li><i class="fas fa-map-marker-alt"></i> North 90th Street, Fifth Settlement, New Cairo,Egypt</li>
+                    <h3>اتصل بنا</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>واتساب: 01018516175</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>واتساب: 01099547974</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>فون خارج مصر: +1 (707) 998 8411</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@basmh.online</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <span>www.basmh.online</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-briefcase"></i>
+                            <span>للتجار: www.elbadry.pro</span>
+                        </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="copyright">
-                &copy; 2023 بصمة - جميع الحقوق محفوظة
+            <div class="footer-bottom">
+                <p>&copy; 2025 بصمة. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
     
-    <!-- زر الواتساب العائم -->
-    <a href="https://wa.me/201018516175" target="_blank" class="whatsapp-float">
+    <!-- زر واتساب العائم -->
+    <a href="https://wa.me/201018516175" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
     
+    <!-- Modal للخدمات -->
+    <div class="modal" id="service-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">عنوان الخدمة</h2>
+                <p class="modal-subtitle" id="modal-subtitle">وصف الخدمة</p>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- سيتم إضافة محتوى الخدمة هنا ديناميكياً -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal لطلب لوحة موزع -->
+    <div class="modal" id="distributor-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-distributor-modal">&times;</span>
+            <div class="modal-header">
+                <h2 class="modal-title">طلب لوحة موزع</h2>
+                <p class="modal-subtitle">املأ النموذج التالي للانضمام إلى شبكة موزعينا المعتمدين</p>
+            </div>
+            <div class="modal-body">
+                <form id="distributor-form">
+                    <input type="hidden" name="form_type" value="distributor">
+                    <div class="form-group">
+                        <label for="distributor-name">الاسم</label>
+                        <input type="text" id="distributor-name" name="name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="distributor-nationality">الجنسية</label>
+                        <input type="text" id="distributor-nationality" name="nationality" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="distributor-residence">بلد الإقامة</label>
+                        <input type="text" id="distributor-residence" name="residence" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="distributor-phone">رقم الهاتف</label>
+                        <input type="tel" id="distributor-phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="distributor-areas">المناطق التي ترغب في تغطيتها</label>
+                        <textarea id="distributor-areas" name="areas" class="form-control" rows="3" placeholder="اكتب المناطق التي ترغب في تغطيتها..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">إرسال الطلب</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
     <script>
-                    // Smooth scrolling for navigation links
+        // إغلاق شريط العروض
+        function closeOfferBar() {
+            const offerBar = document.getElementById('offer-bar');
+            offerBar.style.display = 'none';
+            
+            // حفظ في localStorage حتى لا يظهر مرة أخرى في هذه الجلسة
+            localStorage.setItem('offerBarClosed', 'true');
+        }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+        // التحقق مما إذا كان المستخدم قد أغلق الشريط من قبل
+        window.addEventListener('load', () => {
+            const offerBarClosed = localStorage.getItem('offerBarClosed');
+            if (offerBarClosed === 'true') {
+                document.getElementById('offer-bar').style.display = 'none';
+            }
+        });
+
+        // بيانات الدول - سيتم استبدالها بالبيانات من الخادم
+        let countriesData = [];
+        let strongCountriesData = [];
+        let otherCountriesData = [];
+        
+        // استدعاء API للحصول على بيانات الدول
+        fetch('/api/countries')
+            .then(response => response.json())
+            .then(data => {
+                countriesData = data.countries;
+                strongCountriesData = data.strongCountries || [];
+                otherCountriesData = data.otherCountries || [];
+                renderCountryCards();
+                renderContractsCards();
+                renderStrongServicesCards();
+                renderOtherCountriesCards();
+                setupDistributorForm();
+            })
+            .catch(error => {
+                console.error('Error fetching countries data:', error);
+                // استخدام بيانات احتياطية في حالة فشل الاتصال بالخادم
+                loadFallbackData();
             });
+        
+        // تحميل بيانات احتياطية في حالة فشل الاتصال بالخادم
+        function loadFallbackData() {
+            // هذه البيانات ستكون متطابقة مع بنية ملف countries.json
+            countriesData = [
+                {
+                    "id": "saudi",
+                    "name": "السعودية",
+                    "active": true,
+                    "image": "icon/saudi.png",
+                    "services": [
+                        {
+                            "name": "إقامة 3 شهور",
+                            "price": "3,800 ريال",
+                            "requirements": ["جواز سفر شرط أن يكون مكتوبًا فيه المهنة", "صورة شخصية"],
+                            "notes": "الدفع بعد التنفيذ"
+                        },
+                        {
+                            "name": "إقامة سنة (15 شهر)",
+                            "price": "8,000 ريال",
+                            "requirements": ["جواز سفر شرط أن يكون مكتوبًا فيه المهنة", "صورة شخصية"]
+                        },
+                        {
+                            "name": "نقل كفالة",
+                            "price": "4,500 ريال",
+                            "requirements": ["جواز سفر شرط أن يكون مكتوبًا فيه المهنة", "صورة شخصية"]
+                        },
+                        {
+                            "name": "تفويض تأشيرة",
+                            "price": "6,000 جنيه مصري",
+                            "requirements": ["جواز سفر شرط أن يكون مكتوبًا فيه المهنة", "صورة شخصية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "uae",
+                    "name": "الإمارات",
+                    "active": true,
+                    "image": "icon/uae.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة شهر",
+                            "price": "5,500 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "تأشيرة شهرين",
+                            "price": "11,000 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "إقامة سنتين",
+                            "price": "95,000 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        }
+                    ],
+                    "professions": [
+                        {
+                            "name": "عامل (بناء، محارة، سباكين، ...)",
+                            "salary": "1,400 - 1,500 درهم",
+                            "requirements": ["صورة الجواز", "صورة شخصية", "فيديو من الشغل"],
+                            "contract_cost": {
+                                "زيارة": "40,000 جنيه",
+                                "إقامة سنتين": "75,000 جنيه"
+                            },
+                            "notes": ["ساعات العمل 8 ساعات", "أوفر تايم من ساعتين لأربع ساعات", "الشركة توفر السكن والإقامة والمواصلات"]
+                        },
+                        {
+                            "name": "صناعي (حداد مسلح، نجار مسلح، جبس بورد، نقاش، سيراميك، كهربائي)",
+                            "salary": "1,800 درهم",
+                            "requirements": ["صورة الجواز", "صورة شخصية", "فيديو من الشغل"],
+                            "contract_cost": {
+                                "زيارة": "40,000 جنيه",
+                                "إقامة سنتين": "75,000 جنيه"
+                            },
+                            "notes": ["ساعات العمل 8 ساعات", "أوفر تايم من ساعتين لأربع ساعات", "الشركة توفر السكن والإقامة والمواصلات"]
+                        }
+                    ]
+                },
+                {
+                    "id": "bahrain",
+                    "name": "البحرين",
+                    "active": true,
+                    "image": "icon/bahrain.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة أسبوعين",
+                            "price": "2,400 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "تأشيرة شهر",
+                            "price": "3,400 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "سنة متعددة",
+                            "price": "7,500 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "turkey",
+                    "name": "تركيا",
+                    "active": true,
+                    "image": "icon/turkey.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة أونلاين (للأقل من 18 سنة والأكبر من 45 سنة)",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء"],
+                            "processing_time": "7-10 أيام عمل"
+                        },
+                        {
+                            "name": "تأشيرة سفارة",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "كشف حساب بنكي آخر 6 شهور", "خطاب عمل"],
+                            "processing_time": "25-30 يوم عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "oman",
+                    "name": "عُمان",
+                    "active": true,
+                    "image": "icon/oman.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة 10 أيام",
+                            "price": "2,000 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "تأشيرة شهر",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "تأشيرة 4 شهور",
+                            "price": "15,000 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        },
+                        {
+                            "name": "تجديد شهر",
+                            "price": "6,000 جنيه",
+                            "requirements": ["جواز سفر", "صورة شخصية"]
+                        }
+                    ],
+                    "professions": [
+                        {
+                            "name": "نجار مسلح، حداد مسلح، بناء، محارة",
+                            "salary": "220-250 ريال",
+                            "requirements": ["جواز سفر", "صورة شخصية"],
+                            "contract_cost": {
+                                "زيارة": "25,000 جنيه (شامل الطيران)",
+                                "إقامة سنتين": "100,000 جنيه (شامل الطيران)"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "qatar",
+                    "name": "قطر",
+                    "active": true,
+                    "image": "icon/qatar.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة شهر",
+                            "price": "3,500 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء"]
+                        }
+                    ]
+                },
+                {
+                    "id": "bulgaria",
+                    "name": "بلغاريا",
+                    "active": true,
+                    "image": "icon/bulgaria.png",
+                    "professions": [
+                        {
+                            "name": "موظفين نظافة وضيافة فنادق",
+                            "salary": "650 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "مساعدين مطبخ",
+                            "salary": "630 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "سائقين حفار",
+                            "salary": "900 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%", "رخصة قيادة"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "طاهي عام",
+                            "salary": "850 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "مشغّل ماكينات قص وتلميع الأحجار الطبيعية",
+                            "salary": "700 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "كهربائي جهد عالٍ",
+                            "salary": "1,000 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "فني ألياف ضوئية",
+                            "salary": "750 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        },
+                        {
+                            "name": "فني تركيب شبكات وصناديق اتصالات",
+                            "salary": "650 يورو",
+                            "requirements": ["إجادة اللغة الإنجليزية بنسبة 50%"],
+                            "contract_cost": "6,500 يورو"
+                        }
+                    ]
+                },
+                {
+                    "id": "albania",
+                    "name": "ألبانيا",
+                    "active": true,
+                    "image": "icon/albania.png",
+                    "professions": [
+                        {
+                            "name": "طبيب/طبيبة عيون",
+                            "salary": "1,500 يورو",
+                            "requirements": [
+                                "شهادة طبية مع تخصص في طب العيون",
+                                "فيديو تعريفي",
+                                "سنوات الخبرة تبدأ من سنتين",
+                                "السن من 27 ل 40 سنة",
+                                "انجليزي شرط أساسي"
+                            ],
+                            "contract_cost": "180,000 جنيه"
+                        },
+                        {
+                            "name": "طبيب/طبيبة جلدية",
+                            "salary": "1,000-1,500 يورو",
+                            "requirements": [
+                                "شهادة طبية مع تخصص في الأمراض الجلدية",
+                                "سنوات خبرة تبدأ من سنتين",
+                                "السن من 33 ل 45 سنة",
+                                "انجليزي شرط أساسي"
+                            ],
+                            "contract_cost": "180,000 جنيه"
+                        },
+                        {
+                            "name": "شيف سوشي",
+                            "salary": "1,000-1,200 يورو",
+                            "requirements": [
+                                "إجادة اللغة الإنجليزية",
+                                "خبرة في مجال السوشي"
+                            ],
+                            "contract_cost": "150,000 جنيه"
+                        },
+                        {
+                            "name": "موظفين ديكورات مناسبات وتنظيم إيفنتات",
+                            "salary": "550 يورو + 100 بدل أكل",
+                            "requirements": [
+                                "خبرة عملية في ديكورات المناسبات",
+                                "فيديوهات واضحة وبجودة عالية",
+                                "أن يكون المتقدم هو من ينفّذ العمل بنفسه"
+                            ],
+                            "contract_cost": "150,000 جنيه"
+                        },
+                        {
+                            "name": "فني تشغيل هيلكوبتر",
+                            "salary": "700 يورو",
+                            "requirements": [
+                                "السن من 25 إلى 45 سنة",
+                                "الجدية والخبرة في المجال"
+                            ],
+                            "contract_cost": "150,000 جنيه"
+                        }
+                    ]
+                },
+                {
+                    "id": "macedonia",
+                    "name": "مقدونيا",
+                    "active": true,
+                    "image": "icon/macedonia.png",
+                    "professions": [
+                        {
+                            "name": "وظائف متعددة",
+                            "salary": "700-1,000 يورو",
+                            "requirements": [
+                                "إجراءات التقديم: إرسال نسخة اسكنر من جواز السفر + صورة شخصية بخلفية بيضاء",
+                                "إرسال أربعة فيديوهات على الأقل من شغلك",
+                                "السن من 25 إلى 45 سنة"
+                            ],
+                            "contract_cost": "200,000 جنيه"
+                        }
+                    ]
+                },
+                {
+                    "id": "armenia",
+                    "name": "أرمينيا",
+                    "active": true,
+                    "image": "icon/armenia.png",
+                    "professions": [
+                        {
+                            "name": "صنايعية معمار",
+                            "salary": "1,000 يورو",
+                            "requirements": ["السن من 25 إلى 45 سنة", "جواز سفر", "صورة شخصية"],
+                            "contract_cost": "7,000 يورو"
+                        },
+                        {
+                            "name": "سائقين نقل",
+                            "salary": "1,000 يورو",
+                            "requirements": ["السن من 25 إلى 45 سنة", "جواز سفر", "صورة شخصية", "رخصة قيادة"],
+                            "contract_cost": "7,000 يورو"
+                        },
+                        {
+                            "name": "دليفري درجات نارية",
+                            "salary": "850 يورو",
+                            "requirements": ["السن من 25 إلى 45 سنة", "جواز سفر", "صورة شخصية", "رخصة قيادة"],
+                            "contract_cost": "7,000 يورو"
+                        },
+                        {
+                            "name": "عمال معمار",
+                            "salary": "850 يورو",
+                            "requirements": ["السن من 25 إلى 45 سنة", "جواز سفر", "صورة شخصية"],
+                            "contract_cost": "7,000 يورو"
+                        }
+                    ]
+                }
+            ];
             
-            // Scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
+            // الدول القوية الجديدة (تم نقلها من الدول الأخرى)
+            strongCountriesData = [
+                {
+                    "id": "usa",
+                    "name": "أمريكا",
+                    "active": true,
+                    "image": "icon/usa.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سياحية B1/B2",
+                            "price": "5,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "كشف حساب بنكي", "تذكرة ذهاب وعودة", "حجز فندق"]
+                        },
+                        {
+                            "name": "تأشيرة عمل H1B",
+                            "price": "8,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "عقد عمل أمريكي", "شهادات خبرة", "كشف حساب بنكي"]
+                        },
+                        {
+                            "name": "تأشيرة دراسية F1",
+                            "price": "7,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "قبول جامعي أمريكي", "كشف حساب بنكي", "شهادات أكاديمية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "britain",
+                    "name": "بريطانيا",
+                    "active": true,
+                    "image": "icon/britain.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سياحية",
+                            "price": "4,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "كشف حساب بنكي", "تذكرة ذهاب وعودة"]
+                        },
+                        {
+                            "name": "تأشيرة عمل",
+                            "price": "6,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "كشف حساب بنكي", "عقد عمل", "شهادات خبرة"]
+                        },
+                        {
+                            "name": "تأشيرة دراسية",
+                            "price": "5,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "قبول جامعي", "كشف حساب بنكي", "شهادات أكاديمية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "australia",
+                    "name": "أستراليا",
+                    "active": true,
+                    "image": "icon/australia.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سياحية",
+                            "price": "4,500 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "كشف حساب بنكي", "تذكرة ذهاب وعودة", "حجز فندق"]
+                        },
+                        {
+                            "name": "تأشيرة عمل",
+                            "price": "7,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "عقد عمل أسترالي", "شهادات خبرة", "كشف حساب بنكي"]
+                        },
+                        {
+                            "name": "تأشيرة دراسية",
+                            "price": "6,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "قبول جامعي أسترالي", "كشف حساب بنكي", "شهادات أكاديمية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "china",
+                    "name": "الصين",
+                    "active": true,
+                    "image": "icon/china.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سياحية",
+                            "price": "3,500 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "كشف حساب بنكي", "تذكرة ذهاب وعودة", "حجز فندق"]
+                        },
+                        {
+                            "name": "تأشيرة عمل",
+                            "price": "5,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "عقد عمل صيني", "شهادات خبرة", "كشف حساب بنكي"]
+                        },
+                        {
+                            "name": "تأشيرة دراسية",
+                            "price": "4,500 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "قبول جامعي صيني", "كشف حساب بنكي", "شهادات أكاديمية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "european_union",
+                    "name": "الاتحاد الأوروبي",
+                    "active": true,
+                    "image": "icon/europe.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة شنغن سياحية",
+                            "price": "4,500 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "كشف حساب بنكي", "تذكرة ذهاب وعودة", "حجز فندق", "تأمين سفر"]
+                        },
+                        {
+                            "name": "تأشيرة شنغن عمل",
+                            "price": "6,500 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "عقد عمل أوروبي", "شهادات خبرة", "كشف حساب بنكي", "تأمين سفر"]
+                        },
+                        {
+                            "name": "تأشيرة شنغن دراسية",
+                            "price": "5,500 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "قبول جامعي أوروبي", "كشف حساب بنكي", "تأمين سفر"]
+                        }
+                    ]
+                }
+            ];
             
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
+            // الدول الأخرى الجديدة بناءً على ملف PDF مع زيادة 1000 جنيه على كل سعر
+            // تم إزالة "مصر" و "عمان" من هذه القائمة
+            otherCountriesData = [
+                {
+                    "id": "vietnam",
+                    "name": "فيتنام",
+                    "active": true,
+                    "image": "icon/vietnam.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة فيتنام سريعة",
+                            "price": "3,500 جنيه",
+                            "requirements": ["صورة جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "تواريخ السفر"],
+                            "processing_time": "5-7 أيام عمل"
+                        },
+                        {
+                            "name": "تأشيرة فيتنام مع الدعوة",
+                            "price": "7,500 جنيه",
+                            "requirements": ["صورة شخصية حديثة خلفية بيضاء", "جواز سفر صالح لمدة 6 شهور", "تأمين أمان", "كشف حساب بنكي آخر 6 شهور (إن وجد)", "التأشيرة تشمل الدعوة"]
+                        }
+                    ]
+                },
+                {
+                    "id": "armenia",
+                    "name": "أرمينيا",
+                    "active": true,
+                    "image": "icon/armenia.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة أرمينيا",
+                            "price": "3,500 جنيه",
+                            "requirements": [
+                                "جواز سفر صالح لمدة 6 شهور",
+                                "صورة شخصية خلفية بيضاء",
+                                "كشف حساب بنكي لآخر 6 شهور لا يقل عن 35,000 جنيه",
+                                "خطاب عمل موضح به الدخل أو سجل تجاري وبطاقة ضريبية",
+                                "حجز طيران (ذهاب وعودة) - حجز مبدئي",
+                                "حجز فندق - حجز مبدئي",
+                                "قد تتطلب الحضور للسفارة"
+                            ],
+                            "processing_time": "5-7 أيام عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "thailand",
+                    "name": "تايلاند",
+                    "active": true,
+                    "image": "icon/thailand.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة تايلاند أونلاين (للأقل من 18 سنة والأكبر من 45 سنة)",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء"],
+                            "processing_time": "ساعات عمل"
+                        },
+                        {
+                            "name": "تأشيرة تايلاند سفارة",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "كشف حساب بنكي آخر 6 شهور", "خطاب عمل موضح به الدخل أو سجل تجاري وبطاقة ضريبية"],
+                            "processing_time": "7-10 أيام عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "georgia",
+                    "name": "جورجيا",
+                    "active": true,
+                    "image": "icon/georgia.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة جورجيا أونلاين (للأقل من 18 سنة والأكبر من 45 سنة)",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء"],
+                            "processing_time": "7-10 أيام عمل"
+                        },
+                        {
+                            "name": "تأشيرة جورجيا سفارة",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "كشف حساب بنكي آخر 6 شهور", "خطاب عمل موضح به الدخل أو سجل تجاري وبطاقة ضريبية"]
+                        }
+                    ]
+                },
+                {
+                    "id": "kazakhstan",
+                    "name": "كازاخستان",
+                    "active": true,
+                    "image": "icon/kazakhstan.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة كازاخستان",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "تأمين أمان", "تاريخ السفر", "أي تأشيرة سابقة إن وجدت", "التأشيرة تشمل الدعوة"],
+                            "processing_time": "25-30 يوم عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "kyrgyzstan",
+                    "name": "قيرغيزستان",
+                    "active": true,
+                    "image": "icon/kyrgyzstan.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة قيرغيزستان",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "تأمين أمان", "تاريخ السفر", "أي تأشيرة سابقة إن وجدت", "التأشيرة تشمل الدعوة"],
+                            "processing_time": "25-30 يوم عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "tajikistan",
+                    "name": "طاجيكستان",
+                    "active": true,
+                    "image": "icon/tajikistan.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة طاجيكستان",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء", "تأمين أمان", "تاريخ السفر", "أي تأشيرة سابقة إن وجدت", "التأشيرة تشمل الدعوة"],
+                            "processing_time": "25-30 يوم عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "uzbekistan",
+                    "name": "أوزبكستان",
+                    "active": true,
+                    "image": "icon/uzbekistan.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة أوزبكستان",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "حجز فندق"]
+                        }
+                    ]
+                },
+                {
+                    "id": "singapore",
+                    "name": "سنغافورة",
+                    "active": true,
+                    "image": "icon/singapore.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سنغافورة",
+                            "price": "5,500 جنيه",
+                            "requirements": ["صورة جواز سفر صالح لمدة 6 شهور", "صورة شخصية خلفية بيضاء"],
+                            "processing_time": "15 يوم عمل"
+                        }
+                    ]
+                },
+                {
+                    "id": "iraq",
+                    "name": "العراق",
+                    "active": true,
+                    "image": "icon/iraq.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة زيارة (شهر واحد)",
+                            "price": "1,500 دولار",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صور شخصية", "دعوة من جهة معتمدة"]
+                        },
+                        {
+                            "name": "تأشيرة زيارة (سنة متعددة)",
+                            "price": "2,500 دولار",
+                            "requirements": ["جواز سفر صالح لمدة 6 شهور", "صور شخصية", "دعوة من جهة معتمدة"],
+                            "processing_time": "30-45 يوم"
+                        }
+                    ]
+                },
+                {
+                    "id": "malaysia",
+                    "name": "ماليزيا",
+                    "active": true,
+                    "image": "icon/malaysia.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سياحية",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "حجز فندق"]
+                        }
+                    ]
+                },
+                {
+                    "id": "indonesia",
+                    "name": "إندونيسيا",
+                    "active": true,
+                    "image": "icon/indonesia.png",
+                    "services": [
+                        {
+                            "name": "تأشيرة سياحية 30 يوم",
+                            "price": "3,000 جنيه",
+                            "requirements": ["جواز سفر", "صور شخصية", "تذكرة ذهاب وعودة"]
+                        }
+                    ]
+                }
+            ];
             
-            // Observe service cards and testimonials
-            document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
+            renderCountryCards();
+            renderContractsCards();
+            renderStrongServicesCards();
+            renderOtherCountriesCards();
+            setupDistributorForm();
+        }
+        
+        // إنشاء بطاقات الدول المميزة
+        function renderCountryCards() {
+            const servicesGrid = document.getElementById('countries-grid');
+            servicesGrid.innerHTML = '';
             
-            // Mobile menu functionality
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                this.querySelector('i').classList.toggle('fa-bars');
-                this.querySelector('i').classList.toggle('fa-times');
-            });
-            
-            // Close menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
-                });
-            });
-            
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-            
-            // Navbar scroll effect
-            const navbar = document.querySelector('.navbar');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.style.backgroundColor = 'rgba(33, 27, 27, 0.98)';
-                    navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
-                } else {
-                    navbar.style.backgroundColor = 'rgba(33, 27, 27, 0.95)';
-                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+            countriesData.forEach(country => {
+                if (country.services && country.services.length > 0) {
+                    const card = document.createElement('div');
+                    card.className = 'country-item';
+                    card.dataset.country = country.id;
+                    
+                    card.innerHTML = `
+                        <div class="country-circle">
+                            <img src="${country.image}" alt="${country.name}">
+                        </div>
+                        <div class="country-name">${country.name}</div>
+                    `;
+                    
+                    card.addEventListener('click', () => {
+                        if (country.active) {
+                            showServiceModal(country);
+                        } else {
+                            showInactiveCountryModal(country);
+                        }
+                    });
+                    
+                    servicesGrid.appendChild(card);
                 }
             });
+        }
+        
+        // إنشاء بطاقات الدول القوية
+        function renderStrongServicesCards() {
+            const strongGrid = document.getElementById('strong-countries-grid');
+            strongGrid.innerHTML = '';
+            
+            strongCountriesData.forEach(country => {
+                const card = document.createElement('div');
+                card.className = 'country-item';
+                card.dataset.country = country.id;
+                
+                card.innerHTML = `
+                    <div class="country-circle">
+                        <img src="${country.image}" alt="${country.name}">
+                    </div>
+                    <div class="country-name">${country.name}</div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    if (country.active) {
+                        showServiceModal(country);
+                    } else {
+                        showInactiveCountryModal(country);
+                    }
+                });
+                
+                strongGrid.appendChild(card);
+            });
+        }
+        
+        // إنشاء بطاقات الدول الأخرى
+        function renderOtherCountriesCards() {
+            const otherCountriesGrid = document.getElementById('other-countries-grid');
+            otherCountriesGrid.innerHTML = '';
+            
+            otherCountriesData.forEach(country => {
+                const card = document.createElement('div');
+                card.className = 'country-item';
+                card.dataset.country = country.id;
+                
+                card.innerHTML = `
+                    <div class="country-circle">
+                        <img src="${country.image}" alt="${country.name}">
+                    </div>
+                    <div class="country-name">${country.name}</div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    if (country.active) {
+                        showServiceModal(country);
+                    } else {
+                        showInactiveCountryModal(country);
+                    }
+                });
+                
+                otherCountriesGrid.appendChild(card);
+            });
+        }
+        
+        // إنشاء بطاقات عقود العمل
+        function renderContractsCards() {
+            const contractsGrid = document.getElementById('contracts-grid');
+            contractsGrid.innerHTML = '';
+            
+            const contractCountries = countriesData.filter(country => country.professions && country.professions.length > 0);
+            
+            contractCountries.forEach(country => {
+                const card = document.createElement('div');
+                card.className = 'country-item';
+                
+                card.innerHTML = `
+                    <div class="country-circle">
+                        <img src="${country.image}" alt="${country.name}">
+                    </div>
+                    <div class="country-name">${country.name}</div>
+                `;
+                
+                card.addEventListener('click', () => {
+                    if (country.active) {
+                        showProfessionsModal(country);
+                    } else {
+                        showInactiveCountryModal(country);
+                    }
+                });
+                
+                contractsGrid.appendChild(card);
+            });
+        }
+        
+        // عرض مودال الخدمات مع الأسعار
+        function showServiceModal(country) {
+            const modal = document.getElementById('service-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalBody = document.getElementById('modal-body');
+            
+            modalTitle.textContent = country.name;
+            modalSubtitle.textContent = 'خدمات التأشيرات والإقامات';
+            
+            let modalContent = '';
+            
+            if (country.services && country.services.length > 0) {
+                modalContent += `
+                    <div class="service-info">
+                        <h3>الخدمات المتاحة</h3>
+                `;
+                
+                country.services.forEach(service => {
+                    modalContent += `
+                        <div class="service-option">
+                            <h5>${service.name}</h5>
+                            ${service.requirements && service.requirements.length > 0 ? `
+                            <div class="service-requirements">
+                                <strong>المتطلبات:</strong> ${service.requirements.join('، ')}
+                            </div>
+                            ` : ''}
+                            ${service.notes ? `<div class="service-requirements">${service.notes}</div>` : ''}
+                            ${service.processing_time ? `<div class="service-requirements"><strong>وقت المعالجة:</strong> ${service.processing_time}</div>` : ''}
+                        </div>
+                    `;
+                });
+                
+                modalContent += `</div>`;
+            }
+            
+            modalContent += `
+                <div id="selected-price-container" class="selected-price-container">
+                    <div class="selected-price-title">
+                        <i class="fas fa-tag"></i>
+                        <span>السعر المختار</span>
+                    </div>
+                    <div id="selected-price-value" class="selected-price-value"></div>
+                    <div id="selected-service-details" class="selected-service-details"></div>
+                    <div id="selected-service-requirements" class="selected-service-requirements"></div>
+                </div>
+                
+                <form id="visa-form" data-country="${country.id}">
+                    <input type="hidden" name="country" value="${country.name}">
+                    <input type="hidden" name="form_type" value="visa">
+                    <input type="hidden" id="selected-service-price" name="selected_price" value="">
+                    
+                    ${country.services && country.services.length > 0 ? `
+                    <div class="form-group">
+                        <label for="visa-type">اختر نوع الخدمة</label>
+                        <select id="visa-type" name="visa_type" class="form-control" required>
+                            <option value="">-- اختر نوع الخدمة --</option>
+                            ${country.services.map(service => `
+                                <option value="${service.name}" data-price="${service.price}" data-requirements='${JSON.stringify(service.requirements || [])}' data-notes="${service.notes || ''}" data-processing-time="${service.processing_time || ''}">${service.name}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    ` : '<input type="hidden" name="visa_type" value="تأشيرة عامة">'}
+                    
+                    <div class="form-group">
+                        <label for="nationality">الجنسية</label>
+                        <input type="text" id="nationality" name="nationality" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="residence">بلد الإقامة</label>
+                        <input type="text" id="residence" name="residence" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">إرسال الطلب</button>
+                </form>
+            `;
+            
+            modalBody.innerHTML = modalContent;
+            
+            // إضافة حدث تغيير لـ select الخدمات
+            const visaTypeSelect = document.getElementById('visa-type');
+            const priceContainer = document.getElementById('selected-price-container');
+            const priceValue = document.getElementById('selected-price-value');
+            const serviceDetails = document.getElementById('selected-service-details');
+            const serviceRequirements = document.getElementById('selected-service-requirements');
+            
+            visaTypeSelect.addEventListener('change', function() {
+                if (this.value) {
+                    const selectedOption = this.options[this.selectedIndex];
+                    const price = selectedOption.dataset.price;
+                    const requirements = JSON.parse(selectedOption.dataset.requirements || '[]');
+                    const notes = selectedOption.dataset.notes;
+                    const processingTime = selectedOption.dataset.processingTime;
+                    
+                    // عرض السعر
+                    priceContainer.classList.add('active');
+                    priceValue.textContent = price;
+                    
+                    // تحديث الحقل المخفي للسعر
+                    document.getElementById('selected-service-price').value = price;
+                    
+                    // عرض تفاصيل الخدمة
+                    serviceDetails.innerHTML = `<strong>الخدمة:</strong> ${this.value}`;
+                    
+                    // بناء محتوى المتطلبات
+                    let requirementsHtml = '';
+                    if (requirements.length > 0) {
+                        requirementsHtml += '<h5>متطلبات الخدمة:</h5><ul>';
+                        requirements.forEach(req => {
+                            requirementsHtml += `<li>${req}</li>`;
+                        });
+                        requirementsHtml += '</ul>';
+                    }
+                    
+                    if (notes) {
+                        requirementsHtml += `<p><strong>ملاحظة:</strong> ${notes}</p>`;
+                    }
+                    
+                    if (processingTime) {
+                        requirementsHtml += `<p><strong>وقت المعالجة:</strong> ${processingTime}</p>`;
+                    }
+                    
+                    serviceRequirements.innerHTML = requirementsHtml;
+                } else {
+                    // إخفاء قسم السعر إذا لم يتم اختيار خدمة
+                    priceContainer.classList.remove('active');
+                    document.getElementById('selected-service-price').value = '';
+                }
+            });
+            
+            // إضافة معالج الحدث لنموذج التأشيرة
+            const visaForm = document.getElementById('visa-form');
+            if (visaForm) {
+                visaForm.addEventListener('submit', handleVisaFormSubmit);
+            }
+            
+            modal.style.display = 'block';
+        }
+        
+        // عرض مودال المهن مع المتطلبات والأسعار
+        function showProfessionsModal(country) {
+            const modal = document.getElementById('service-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalBody = document.getElementById('modal-body');
+            
+            modalTitle.textContent = country.name;
+            modalSubtitle.textContent = 'عقود العمل المتاحة';
+            
+            let modalContent = `
+                <div class="service-info">
+                    <h3>المهن المتاحة</h3>
+            `;
+            
+            country.professions.forEach(profession => {
+                modalContent += `
+                    <div class="service-option">
+                        <h5>${profession.name}</h5>
+                        ${profession.requirements && Array.isArray(profession.requirements) && profession.requirements.length > 0 ? `
+                        <div class="service-requirements">
+                            <strong>المتطلبات:</strong><br>
+                            ${profession.requirements.map(req => `• ${req}`).join('<br>')}
+                        </div>
+                        ` : ''}
+                        
+                        ${profession.requirements && typeof profession.requirements === 'string' ? `
+                        <div class="service-requirements">
+                            <strong>المتطلبات:</strong> ${profession.requirements}
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+            
+            modalContent += `</div>`;
+            
+            modalContent += `
+                <div id="selected-price-container" class="selected-price-container">
+                    <div class="selected-price-title">
+                        <i class="fas fa-tag"></i>
+                        <span>التفاصيل المختارة</span>
+                    </div>
+                    <div id="selected-price-value" class="selected-price-value"></div>
+                    <div id="selected-service-details" class="selected-service-details"></div>
+                    <div id="selected-service-requirements" class="selected-service-requirements"></div>
+                </div>
+                
+                <form id="contract-form" data-country="${country.id}">
+                    <input type="hidden" name="country" value="${country.name}">
+                    <input type="hidden" name="form_type" value="contract">
+                    <input type="hidden" id="selected-contract-salary" name="selected_salary" value="">
+                    <input type="hidden" id="selected-contract-cost" name="selected_contract_cost" value="">
+                    
+                    <div class="form-group">
+                        <label for="profession">اختر المهنة</label>
+                        <select id="profession" name="profession" class="form-control" required>
+                            <option value="">-- اختر المهنة --</option>
+                            ${country.professions.map(profession => `
+                                <option value="${profession.name}" 
+                                        data-salary="${profession.salary || 'غير محدد'}" 
+                                        data-contract-cost="${typeof profession.contract_cost === 'object' ? JSON.stringify(profession.contract_cost) : (profession.contract_cost || 'غير محدد')}"
+                                        data-requirements='${JSON.stringify(profession.requirements || [])}'
+                                        data-notes='${JSON.stringify(profession.notes || [])}'>
+                                    ${profession.name}
+                                </option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contract-nationality">الجنسية</label>
+                        <input type="text" id="contract-nationality" name="nationality" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contract-residence">بلد الإقامة</label>
+                        <input type="text" id="contract-residence" name="residence" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contract-phone">رقم الهاتف</label>
+                        <input type="tel" id="contract-phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contract-experience">سنوات الخبرة</label>
+                        <input type="text" id="contract-experience" name="experience" class="form-control" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">إرسال الطلب</button>
+                </form>
+            `;
+            
+            modalBody.innerHTML = modalContent;
+            
+            // إضافة حدث تغيير لـ select المهن
+            const professionSelect = document.getElementById('profession');
+            const priceContainer = document.getElementById('selected-price-container');
+            const priceValue = document.getElementById('selected-price-value');
+            const serviceDetails = document.getElementById('selected-service-details');
+            const serviceRequirements = document.getElementById('selected-service-requirements');
+            
+            professionSelect.addEventListener('change', function() {
+                if (this.value) {
+                    const selectedOption = this.options[this.selectedIndex];
+                    const salary = selectedOption.dataset.salary;
+                    const contractCost = selectedOption.dataset.contractCost;
+                    const requirements = JSON.parse(selectedOption.dataset.requirements || '[]');
+                    const notes = JSON.parse(selectedOption.dataset.notes || '[]');
+                    
+                    // عرض التفاصيل
+                    priceContainer.classList.add('active');
+                    
+                    let priceHtml = '';
+                    if (salary !== 'غير محدد') {
+                        priceHtml += `<div style="margin-bottom: 10px;"><strong>الراتب:</strong> ${salary}</div>`;
+                    }
+                    
+                    if (contractCost !== 'غير محدد') {
+                        try {
+                            const costData = JSON.parse(contractCost);
+                            if (typeof costData === 'object') {
+                                priceHtml += `<div><strong>تكلفة العقد:</strong><br>`;
+                                for (const [key, value] of Object.entries(costData)) {
+                                    priceHtml += `${key}: ${value}<br>`;
+                                }
+                                priceHtml += `</div>`;
+                            } else {
+                                priceHtml += `<div><strong>تكلفة العقد:</strong> ${contractCost}</div>`;
+                            }
+                        } catch (e) {
+                            priceHtml += `<div><strong>تكلفة العقد:</strong> ${contractCost}</div>`;
+                        }
+                    }
+                    
+                    priceValue.innerHTML = priceHtml;
+                    
+                    // تحديث الحقول المخفية
+                    document.getElementById('selected-contract-salary').value = salary;
+                    document.getElementById('selected-contract-cost').value = contractCost;
+                    
+                    // عرض تفاصيل الخدمة
+                    serviceDetails.innerHTML = `<strong>المهنة:</strong> ${this.value}`;
+                    
+                    // بناء محتوى المتطلبات والملاحظات
+                    let requirementsHtml = '';
+                    if (requirements.length > 0) {
+                        requirementsHtml += '<h5>متطلبات المهنة:</h5><ul>';
+                        requirements.forEach(req => {
+                            requirementsHtml += `<li>${req}</li>`;
+                        });
+                        requirementsHtml += '</ul>';
+                    }
+                    
+                    if (notes.length > 0) {
+                        requirementsHtml += '<h5>مزايا العمل:</h5><ul>';
+                        notes.forEach(note => {
+                            requirementsHtml += `<li>${note}</li>`;
+                        });
+                        requirementsHtml += '</ul>';
+                    }
+                    
+                    serviceRequirements.innerHTML = requirementsHtml;
+                } else {
+                    // إخفاء قسم التفاصيل إذا لم يتم اختيار مهنة
+                    priceContainer.classList.remove('active');
+                    document.getElementById('selected-contract-salary').value = '';
+                    document.getElementById('selected-contract-cost').value = '';
+                }
+            });
+            
+            // إضافة معالج الحدث لنموذج العقد
+            const contractForm = document.getElementById('contract-form');
+            contractForm.addEventListener('submit', handleContractFormSubmit);
+            
+            modal.style.display = 'block';
+        }
+        
+        // عرض رسالة للدول غير المفعلة
+        function showInactiveCountryModal(country) {
+            const modal = document.getElementById('service-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalBody = document.getElementById('modal-body');
+            
+            modalTitle.textContent = country.name;
+            modalSubtitle.textContent = 'راقب التحديثات,ستتوفر قريباً';
+            
+            modalBody.innerHTML = `
+                <div class="country-inactive-message">
+                    <i class="fas fa-clock"></i>
+                    <h3>سوف تتوفر قريباً</h3>
+                    <p>نعمل حالياً على توفير خدمات ${country.name} قريباً. يرجى التحقق مرة أخرى في وقت لاحق.</p>
+                </div>
+            `;
+            
+            modal.style.display = 'block';
+        }
+        
+        // إعداد نموذج طلب لوحة موزع
+        function setupDistributorForm() {
+            const distributorBtn = document.getElementById('distributor-btn');
+            const distributorModal = document.getElementById('distributor-modal');
+            const closeDistributorModal = document.getElementById('close-distributor-modal');
+            
+            // فتح مودال طلب لوحة موزع
+            distributorBtn.addEventListener('click', () => {
+                distributorModal.style.display = 'block';
+            });
+            
+            // إغلاق مودال طلب لوحة موزع
+            closeDistributorModal.addEventListener('click', () => {
+                distributorModal.style.display = 'none';
+            });
+            
+            // معالجة نموذج طلب لوحة موزع
+            const distributorForm = document.getElementById('distributor-form');
+            distributorForm.addEventListener('submit', handleDistributorFormSubmit);
+        }
+        
+        // معالجة نموذج طلب التأشيرة
+        function handleVisaFormSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const country = formData.get('country');
+            const visaType = formData.get('visa_type');
+            const price = formData.get('selected_price');
+            const phoneNumber = formData.get('phone');
+            const nationality = formData.get('nationality');
+            const residence = formData.get('residence');
+            
+            // تحديد الرقم المستهدف بناءً على الدولة
+            let whatsappNumber = '201018516175'; // الرقم الافتراضي
+            let message = '';
+            
+            if (country === 'الإمارات') {
+                whatsappNumber = '201099547974';
+                message = `طلب تأشيرة إمارات\nالدولة: ${country}\nنوع الخدمة: ${visaType}\nالسعر: ${price}\nالجنسية: ${nationality}\nبلد الإقامة: ${residence}\nرقم الهاتف: ${phoneNumber}`;
+            } else {
+                message = `طلب تأشيرة\nالدولة: ${country}\nنوع الخدمة: ${visaType}\nالسعر: ${price}\nالجنسية: ${nationality}\nبلد الإقامة: ${residence}\nرقم الهاتف: ${phoneNumber}`;
+            }
+            
+            // ترميز الرسالة
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // فتح واتساب مع الرسالة
+            window.open(whatsappUrl, '_blank');
+            
+            // إغلاق المودال
+            document.getElementById('service-modal').style.display = 'none';
+            
+            // إعادة تعيين النموذج
+            form.reset();
+        }
+        
+        // معالجة نموذج طلب العقد
+        function handleContractFormSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const country = formData.get('country');
+            const profession = formData.get('profession');
+            const salary = formData.get('selected_salary');
+            const contractCost = formData.get('selected_contract_cost');
+            const phoneNumber = formData.get('phone');
+            const nationality = formData.get('nationality');
+            const residence = formData.get('residence');
+            const experience = formData.get('experience');
+            
+            // تحديد الرقم المستهدف بناءً على الدولة
+            let whatsappNumber = '201018516175'; // الرقم الافتراضي
+            let message = '';
+            
+            if (country === 'الإمارات') {
+                whatsappNumber = '201099547974';
+                message = `طلب عقد عمل إماراتي\nالدولة: ${country}\nالمهنة: ${profession}\nالراتب: ${salary}\nتكلفة العقد: ${contractCost}\nالجنسية: ${nationality}\nبلد الإقامة: ${residence}\nسنوات الخبرة: ${experience}\nرقم الهاتف: ${phoneNumber}`;
+            } else {
+                message = `طلب عقد عمل\nالدولة: ${country}\nالمهنة: ${profession}\nالراتب: ${salary}\nتكلفة العقد: ${contractCost}\nالجنسية: ${nationality}\nبلد الإقامة: ${residence}\nسنوات الخبرة: ${experience}\nرقم الهاتف: ${phoneNumber}`;
+            }
+            
+            // ترميز الرسالة
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            // فتح واتساب مع الرسالة
+            window.open(whatsappUrl, '_blank');
+            
+            // إغلاق المودال
+            document.getElementById('service-modal').style.display = 'none';
+            
+            // إعادة تعيين النموذج
+            form.reset();
+        }
+        
+        // معالجة نموذج طلب لوحة موزع
+        function handleDistributorFormSubmit(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const nationality = formData.get('nationality');
+            const residence = formData.get('residence');
+            const phoneNumber = formData.get('phone');
+            const areas = formData.get('areas');
+            
+            // رسالة طلب لوحة موزع
+            const message = `طلب لوحة موزع\nالاسم: ${name}\nالجنسية: ${nationality}\nبلد الإقامة: ${residence}\nرقم الهاتف: ${phoneNumber}\nالمناطق المراد تغطيتها: ${areas}`;
+            
+            // ترميز الرسالة
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/201018516175?text=${encodedMessage}`;
+            
+            // فتح واتساب مع الرسالة
+            window.open(whatsappUrl, '_blank');
+            
+            // إغلاق المودال
+            document.getElementById('distributor-modal').style.display = 'none';
+            
+            // إعادة تعيين النموذج
+            form.reset();
+        }
+        
+        // إغلاق المودال عند النقر على زر الإغلاق أو خارج المودال
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('service-modal').style.display = 'none';
         });
         
-        // فتح رابط واتساب مع نص الخدمة المطلوبة
-        function openWhatsApp(serviceName) {
-            const phone = '201018516175';
-            const text = `أرغب في خدمة ${serviceName}`;
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-            window.open(whatsappUrl, '_blank');
+        window.addEventListener('click', (e) => {
+            const serviceModal = document.getElementById('service-modal');
+            const distributorModal = document.getElementById('distributor-modal');
+            
+            if (e.target === serviceModal) {
+                serviceModal.style.display = 'none';
+            }
+            
+            if (e.target === distributorModal) {
+                distributorModal.style.display = 'none';
+            }
+        });
+        
+        // تأثير الآلة الكاتبة
+        function typeWriter(text, element, speed = 100) {
+            let i = 0;
+            element.textContent = '';
+            element.style.opacity = 1;
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
         }
-  !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="gMMhh9ZF35fOptlL7Scrgyy5xUPIApJv";;analytics.SNIPPET_VERSION="5.2.0";
-  analytics.load("gMMhh9ZF35fOptlL7Scrgyy5xUPIApJv");
-  analytics.page();
-  }}();
-
+        
+        // تشغيل تأثير الآلة الكاتبة عند تحميل الصفحة
+        window.addEventListener('load', () => {
+            const typewriterElement = document.getElementById('typewriter');
+            setTimeout(() => {
+                typeWriter('Travel Agency', typewriterElement, 150);
+            }, 1000);
+        });
+        
+        // تغيير شريط التنقل عند التمرير
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '5px 0';
+                navbar.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
+            } else {
+                navbar.style.padding = '10px 0';
+                navbar.style.backgroundColor = 'rgba(18, 18, 18, 0.9)';
+            }
+        });
+        
+        // تبديل قائمة التنقل في الشاشات الصغيرة
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // إغلاق قائمة التنقل عند النقر على رابط
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
     </script>
 </body>
-
 </html>
-
-
